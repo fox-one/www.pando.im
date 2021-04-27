@@ -11,7 +11,7 @@
     </div>
 
     <div class="text-center f-headline mb-10">Products</div>
-    <div class="products d-flex justify-space-between">
+    <div class="products d-flex">
       <f-panel
         class="product text-center mb-10 pa-4"
         padding="0"
@@ -109,6 +109,7 @@ export default IndexPage;
   flex-wrap: wrap;
   max-width: 720px;
   margin: 0 auto;
+  justify-content: space-between;
 }
 .product {
   width: 30%;
@@ -122,6 +123,14 @@ export default IndexPage;
   .button {
     padding-left: 26px;
     padding-right: 26px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .products {
+    justify-content: space-around;
+  }
+  .product {
+    width: 46%;
   }
 }
 </style>
