@@ -62,7 +62,7 @@ class IndexPage extends Vue {
         subtitle:
           "A fully decentralized protocol for automated liquidity provision.",
         status: "Open beta",
-        url: "https://app.4swap.org",
+        url: "https://lake.pando.im",
         runnable: true,
       },
       {
