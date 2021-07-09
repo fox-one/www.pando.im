@@ -3,10 +3,10 @@
     <h1 class="home-headline text-center mt-10 mb-4">I'm Pando</h1>
     <div class="mb-10">
       <div class="home-sub-headline text-center">
-        a decentralized financial network built with the
+        a decentralized financial network built with
         <a href="https://developers.mixin.one/document/mainnet/mtg/overview">MTG</a
         ><br />
-        that includes a series of De-Fi protocols.
+        that includes a series of financial protocols.
       </div>
     </div>
 
