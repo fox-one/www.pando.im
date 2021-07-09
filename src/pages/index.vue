@@ -4,7 +4,7 @@
     <div class="mb-10">
       <div class="home-sub-headline text-center">
         a decentralized financial network built with the
-        <a href="https://developers.mixin.one/document/mainnet/mtg">MTG</a
+        <a href="https://developers.mixin.one/document/mainnet/mtg/overview">MTG</a
         ><br />
         that includes a series of De-Fi protocols.
       </div>
