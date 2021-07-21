@@ -1,5 +1,10 @@
 #app.theme--light.v-application {
-  background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #ffff 100%) !important;
   font-family: SF UI Display, Helvetica, Arial, ubuntu, sans-serif !important;
   font-size: 16px;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
 }

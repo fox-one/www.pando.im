@@ -1,53 +1,41 @@
 <template>
-  <v-container>
-    <h1 class="home-headline text-center mt-10 mb-4">I'm Pando</h1>
-    <div class="mb-10">
-      <div class="home-sub-headline text-center">
-        a decentralized financial network built with the
-        <a href="https://developers.mixin.one/document/mainnet/mtg">MTG</a
-        ><br />
-        that includes a series of De-Fi protocols.
+  <div class="page">
+    <div class="head">
+      <div class="head-image"></div>
+      <div class="head-content">
+        <h1 class="home-headline mt-10 mb-4">I'm Pando</h1>
+        <div class="mb-10">
+          <div class="home-sub-headline f-greyscale-3">
+            A decentralized financial network built with the
+            <a href="https://developers.mixin.one/document/mainnet/mtg">MTG</a>
+            that includes a series of open financial protocols.
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="text-center f-headline mb-10">Products</div>
     <div class="products d-flex">
-      <f-panel
-        class="product text-center mb-10 pa-4"
-        padding="0"
+      <product-item
         v-for="product in products"
+        :product="product"
         :key="product.title"
-      >
-        <div class="right pa-4">
-          <h3 class="f-title-1 product-title mb-2">{{ product.title }}</h3>
-          <div class="f-text-2 product-status mb-4 f-greyscale-3">
-            {{ product.status }}
-          </div>
-          <div class="f-text-2 product-subtitle mb-2">
-            {{ product.subtitle }}
-          </div>
-          <f-button
-            :disabled="!product.runnable"
-            type="primary"
-            class="button"
-            @click="launch(product)"
-            >Launch</f-button
-          >
-        </div>
-      </f-panel>
+      />
     </div>
-    <div class="f-text-2 text-center my-10">© 2021 Pando</div>
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import ProductItem from "@/components/ProductItem.vue";
 
 @Component({
   head() {
     return {
       title: this.title,
     };
+  },
+  components: {
+    ProductItem,
   },
 })
 class IndexPage extends Vue {
@@ -58,34 +46,51 @@ class IndexPage extends Vue {
   get products() {
     return [
       {
-        title: "Lake",
+        name: "lake",
+        title: "Pando Lake",
         subtitle:
           "A fully decentralized protocol for automated liquidity provision.",
         status: "Open beta",
         url: "https://lake.pando.im",
         runnable: true,
+        icon: require("~/assets/images/products/lake.png"),
+        icon_hover: require("~/assets/images/products/lake-white.png"),
+        launch_label: "Swap coins",
+        bg_color: "#EDFBFC",
       },
       {
-        title: "Leaf",
+        name: "leaf",
+        title: "Pando Leaf",
         subtitle:
           "A decentralized financial network, implement a derivatives liquidity protocol.",
         status: "Open beta",
         url: "https://leaf.pando.im",
         runnable: true,
+        icon: require("~/assets/images/products/leaf.png"),
+        icon_hover: require("~/assets/images/products/leaf-white.png"),
+        launch_label: "Go to mortgage",
+        bg_color: "#F1FDF3",
       },
       {
-        title: "Rings",
+        name: "rings",
+        title: "Pando Rings",
         subtitle: "An algorithmic, autonomous interest rate protocol.",
         status: "Coming soon",
         url: "https://rings.4swap.org",
         runnable: false,
+        icon: require("~/assets/images/products/rings.png"),
+        icon_hover: require("~/assets/images/products/rings-white.png"),
+        launch_label: "Go for a loan",
+        bg_color: "#FEFAF3",
       },
       {
-        title: "Root",
+        name: "other",
+        title: "Pando Root",
         subtitle: "The mystery project.",
         status: "Coming soon",
-        url: "https://root.4swap.org",
         runnable: false,
+        icon: require("~/assets/images/products/other.png"),
+        icon_hover: require("~/assets/images/products/other.png"),
       },
     ];
   }
@@ -99,38 +104,59 @@ export default IndexPage;
 </script>
 
 <style lang="scss" scoped>
-.home-headline {
-  font-size: 40px;
-}
-.home-sub-headline {
-  font-size: 20px;
-}
 .products {
   flex-wrap: wrap;
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto;
   justify-content: space-between;
 }
-.product {
-  width: 30%;
-  .product-title {
-    font-size: 20px !important;
+
+.head {
+  height: 340px;
+  background: transparent url(~/assets/images/head-bg.png) 100% center no-repeat;
+  background-size: contain;
+  margin-bottom: 96px;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  display: flex;
+  .head-image {
+    width: 242px;
+    height: 285px;
+    background: transparent url(~/assets/images/head-image.png) center center
+      no-repeat;
+    background-size: contain;
+    display: block;
   }
-  .product-subtitle {
-    font-weight: normal !important;
-    height: 140px;
-  }
-  .button {
-    padding-left: 26px;
-    padding-right: 26px;
+  .head-content {
+    .home-headline {
+      font-size: 40px;
+    }
+
+    .home-sub-headline {
+      font-size: 16px;
+      max-width: 480px;
+    }
   }
 }
+
 @media only screen and (max-width: 600px) {
-  .products {
-    justify-content: space-around;
-  }
-  .product {
-    width: 46%;
+  .head {
+    padding: 20px;
+    display: block;
+    margin-bottom: 20px;
+    .head-image {
+      height: 165px;
+      margin: 0 auto;
+    }
+    .head-content {
+      .home-headline {
+        font-size: 24px;
+      }
+      .home-sub-headline {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>
