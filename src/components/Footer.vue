@@ -1,8 +1,11 @@
 <template>
   <div class="footer">
     <div class="footer-inner d-flex align-center mt-4">
-      <div class="social-icons">
+      <div class="social-icons mr-4">
         <v-icon color="black">{{ $icons.mdiTwitter }}</v-icon>
+      </div>
+      <div class="f-caption f-greyscale-3 links">
+        <a href="https://blog.pando.im/" target="_blank">Blog</a>
       </div>
       <v-spacer />
       <div class="f-caption f-greyscale-3">Copyright © 2021 Pando</div>
