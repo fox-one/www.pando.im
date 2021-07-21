@@ -1,50 +1,105 @@
 <template>
   <div class="product-wrapper">
-    <div class="product" :class="product.name" :style="productStyles">
-      <div class="product-icon">
-        <v-img
-          :width="32"
-          :height="32"
-          :src="product.icon"
-          :alt="'icon of ' + product.title"
-          class="product-icon-image mb-4"
-        />
-        <v-img
-          :width="32"
-          :height="32"
-          :src="product.icon_hover"
-          :alt="'icon of ' + product.title"
-          class="product-icon-image product-icon-image-hover mb-4"
-        />
-      </div>
-      <div class="product-title mb-4">{{ product.title }}</div>
-      <div class="product-subtitle mb-4">{{ product.subtitle }}</div>
-      <div class="product-buttons">
+    <div
+      class="product"
+      :class="product.name"
+      :style="productStyles"
+      @mouseover="mouseover"
+      @mouseleave="mouseleave"
+    >
+      <div class="product-content">
+        <div class="product-icon mb-3">
+          <v-img
+            :width="32"
+            :height="32"
+            :src="product.icon"
+            :alt="'icon of ' + product.title"
+            class="product-icon-image"
+          />
+          <v-img
+            :width="32"
+            :height="32"
+            :src="product.icon_hover"
+            :alt="'icon of ' + product.title"
+            class="product-icon-image product-icon-image-hover"
+          />
+        </div>
+        <div class="product-title mb-2">{{ product.title }}</div>
+        <div class="product-subtitle mb-3">{{ product.subtitle }}</div>
         <a
-          v-if="product.launch_label"
-          :href="product.url"
-          class="product-button d-flex align-center"
+          v-if="product.help_label"
+          :href="product.help_url"
+          class="product-help-link d-flex align-center"
           target="_blank"
         >
-          {{ product.launch_label }}
-          <v-icon :size="16" color="black" class="product-button-icon ml-2">{{
+          {{ product.help_label }}
+          <v-icon :size="16" color="black" class="product-button-icon ml-1">{{
             $icons.mdiArrowRight
           }}</v-icon>
         </a>
+        <div class="product-buttons">
+          <f-button
+            v-if="product.launch_label"
+            :href="product.launch_url"
+            class="product-button d-flex align-center"
+            target="_blank"
+          >
+            {{ product.launch_label }}
+          </f-button>
+        </div>
       </div>
+      <div class="product-screenshot">
+        <v-img
+          class="product-screenshot-image"
+          :src="`/screenshots/${product.name}.png`"
+        />
+        <v-img
+          class="product-screenshot-frame-image"
+          :src="`/screenshots/outline.png`"
+        />
+      </div>
+      <div ref="ani" class="product-ani"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
+import lottie from "lottie-web";
 
 @Component
 class ProductItem extends Vue {
   @Prop() product: any;
 
+  animation: any = null;
+
+  hover = false;
+
   get productStyles() {
     return { "background-color": this.product?.bg_color || "#fafafa" };
+  }
+
+  mouseover() {
+    this.hover = true;
+    this.animation.play();
+  }
+
+  mouseleave() {
+    this.hover = false;
+    this.animation.stop();
+  }
+
+  mounted() {
+    const ele = (this.$refs as any).ani;
+    if (this.animation === null) {
+      this.animation = lottie.loadAnimation({
+        container: ele as Element, // the dom element that will contain the animation
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: `/animations/${this.product.name}.json`, // the path to the animation json
+      });
+    }
   }
 }
 export default ProductItem;
@@ -53,16 +108,17 @@ export default ProductItem;
 <style lang="scss" scoped>
 .product-wrapper {
   width: 50%;
-  height: 340px;
+  height: 350px;
   padding: 4px;
 }
 .product {
   background-color: #f1fdf3;
   height: 100%;
-  padding: 48px;
+  padding: 40px;
   position: relative;
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
+  overflow: hidden;
   .product-icon-image {
     display: block;
   }
@@ -78,24 +134,55 @@ export default ProductItem;
   &.rings {
     background: linear-gradient(139.54deg, #fefaf3 55.1%, #fefaf3 87.88%);
   }
-}
-.product-title {
-  font-size: 24px;
-  font-weight: bold;
-}
-.product-subtitle {
-  font-size: 14px;
-  max-width: 50%;
-}
-.product-buttons {
-  position: absolute;
-  bottom: 48px;
-  left: 48px;
-  .product-button {
+  .product-screenshot-image,
+  .product-screenshot-frame-image {
+    width: 240px;
+    height: 470px;
+    position: absolute;
+    right: -30px;
+    bottom: -200px;
+    transform: rotateZ(7deg);
+  }
+  .product-screenshot-frame-image {
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+  }
+  .product-ani {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 160px;
+    right: 40px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  .product-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .product-subtitle {
+    font-size: 14px;
+    max-width: 60%;
+  }
+  .product-help-link {
     font-weight: 600;
     color: black;
     font-size: 14px;
     transition: all 0.2s ease-in-out;
+  }
+  .product-buttons {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    .product-button {
+      padding-left: 24px;
+      padding-right: 24px;
+      ::v-deep {
+        .v-btn__content {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 .product:hover {
@@ -117,6 +204,16 @@ export default ProductItem;
   .product-button-icon {
     transform: translateX(10px);
   }
+  .product-screenshot-image {
+    display: none;
+  }
+  .product-screenshot-frame-image {
+    opacity: 1;
+    transform: rotateZ(0deg);
+  }
+  .product-ani {
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 600px) {
   .product-wrapper {
@@ -124,10 +221,27 @@ export default ProductItem;
     padding: 20px;
     .product {
       padding: 24px;
+      .product-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .product-subtitle {
+        font-size: 12px;
+        max-width: 65%;
+      }
       .product-buttons {
         position: absolute;
         bottom: 24px;
         left: 24px;
+      }
+      .product-screenshot-image,
+      .product-screenshot-frame-image {
+        width: 168px;
+        height: 330px;
+        position: absolute;
+        right: -40px;
+        bottom: -80px;
+        transform: rotateZ(7deg);
       }
     }
   }

@@ -17,7 +17,7 @@ export default function ({ store }) {
       },
       themes: {
         light: {
-          primary: "#149CFF",
+          primary: "#000000",
           accent: "#ee4596",
           // greyscale
           greyscale_1: "#000000",
@@ -30,16 +30,9 @@ export default function ({ store }) {
           error: "#f44c4c",
           success: "#00c7af",
           warning: "#FC8A22",
-          // general color
-          yellow: "#fadf8b",
-          purple: "#c699e6",
-          blue: "#149CFF",
-          gray: "#b9b9bc",
-          green: "#9ddc95",
-          red: "#f39086",
         },
         dark: {
-          primary: "#3476d6",
+          primary: "#ffffff",
           accent: "#f16aab",
           // greyscale
           greyscale_1: "#ffffff",
@@ -52,13 +45,6 @@ export default function ({ store }) {
           error: "#f67070",
           success: "#33d2bf",
           warning: "#FC8A22",
-          // general color
-          yellow: "#d8ba44",
-          purple: "#9d5bcb",
-          blue: "#3476d6",
-          gray: "#87868a",
-          green: "#61b756",
-          red: "#ce4d40",
         },
       },
     },

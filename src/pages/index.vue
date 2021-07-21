@@ -51,12 +51,13 @@ class IndexPage extends Vue {
         subtitle:
           "A fully decentralized protocol for automated liquidity provision.",
         status: "Open beta",
-        url: "https://lake.pando.im",
         runnable: true,
         icon: require("~/assets/images/products/lake.png"),
         icon_hover: require("~/assets/images/products/lake-white.png"),
         launch_label: "Swap coins",
-        bg_color: "#EDFBFC",
+        launch_url: "https://lake.pando.im",
+        help_label: "Learn more",
+        help_url: "https://google.com",
       },
       {
         name: "leaf",
@@ -64,29 +65,31 @@ class IndexPage extends Vue {
         subtitle:
           "A decentralized financial network, implement a derivatives liquidity protocol.",
         status: "Open beta",
-        url: "https://leaf.pando.im",
         runnable: true,
         icon: require("~/assets/images/products/leaf.png"),
         icon_hover: require("~/assets/images/products/leaf-white.png"),
         launch_label: "Go to mortgage",
-        bg_color: "#F1FDF3",
+        launch_url: "https://leaf.pando.im",
+        help_label: "Learn more",
+        help_url: "https://google.com",
       },
       {
         name: "rings",
         title: "Pando Rings",
         subtitle: "An algorithmic, autonomous interest rate protocol.",
         status: "Coming soon",
-        url: "https://rings.4swap.org",
         runnable: false,
         icon: require("~/assets/images/products/rings.png"),
         icon_hover: require("~/assets/images/products/rings-white.png"),
         launch_label: "Go for a loan",
-        bg_color: "#FEFAF3",
+        launch_url: "https://rings.pando.im",
+        help_label: "Learn more",
+        help_url: "https://google.com",
       },
       {
         name: "other",
         title: "Pando Root",
-        subtitle: "The mystery project.",
+        subtitle: "The mystery project, coming soon",
         status: "Coming soon",
         runnable: false,
         icon: require("~/assets/images/products/other.png"),
@@ -113,7 +116,8 @@ export default IndexPage;
 
 .head {
   height: 340px;
-  background: transparent url(~/assets/images/head-bg.png) 100% center no-repeat;
+  background: transparent url(~/assets/images/head-bg.png) center center
+    no-repeat;
   background-size: contain;
   margin-bottom: 96px;
   justify-content: space-between;
@@ -145,6 +149,9 @@ export default IndexPage;
     padding: 20px;
     display: block;
     margin-bottom: 20px;
+    background: transparent url(~/assets/images/head-bg-small.png) center center
+      no-repeat;
+    background-size: contain;
     .head-image {
       height: 165px;
       margin: 0 auto;

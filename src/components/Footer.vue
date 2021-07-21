@@ -1,11 +1,11 @@
 <template>
   <div class="footer">
-    <div class="footer-inner d-flex mt-4">
+    <div class="footer-inner d-flex align-center mt-4">
       <div class="social-icons">
         <v-icon color="black">{{ $icons.mdiTwitter }}</v-icon>
       </div>
       <v-spacer />
-      <div class="f-body-2 f-greyscale-3">Copyright © 2021 Pando</div>
+      <div class="f-caption f-greyscale-3">Copyright © 2021 Pando</div>
     </div>
   </div>
 </template>
@@ -28,9 +28,9 @@ export default ProductItem;
 .footer {
   margin-top: 100px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  height: 150px;
 }
 .footer-inner {
-  height: 150px;
   max-width: 960px;
   margin: 0 auto;
 }
