@@ -119,6 +119,8 @@ export default ProductItem;
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
+  cursor: default;
+
   .product-icon-image {
     display: block;
   }
@@ -142,6 +144,10 @@ export default ProductItem;
     right: -30px;
     bottom: -200px;
     transform: rotateZ(7deg);
+  }
+  .product-screenshot-image {
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
   }
   .product-screenshot-frame-image {
     transition: all 0.2s ease-in-out;
@@ -205,7 +211,8 @@ export default ProductItem;
     transform: translateX(10px);
   }
   .product-screenshot-image {
-    display: none;
+    transform: rotateZ(0deg);
+    opacity: 0;
   }
   .product-screenshot-frame-image {
     opacity: 1;
