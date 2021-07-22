@@ -56,7 +56,7 @@ class IndexPage extends Vue {
         launch_label: "Swap coins",
         launch_url: "https://lake.pando.im",
         help_label: "Learn more",
-        help_url: "https://google.com",
+        help_url: "https://blog.pando.im/pando-lake/",
       },
       {
         name: "leaf",
@@ -69,7 +69,7 @@ class IndexPage extends Vue {
         launch_label: "Go to mortgage",
         launch_url: "https://leaf.pando.im",
         help_label: "Learn more",
-        help_url: "https://google.com",
+        help_url: "https://blog.pando.im/pando-leaf/",
       },
       {
         name: "rings",
@@ -81,7 +81,7 @@ class IndexPage extends Vue {
         launch_label: "Go for a loan",
         launch_url: "https://rings.pando.im",
         help_label: "Learn more",
-        help_url: "https://google.com",
+        help_url: "https://blog.pando.im/pando-rings/",
       },
       {
         name: "other",
