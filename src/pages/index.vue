@@ -3,8 +3,8 @@
     <div class="head">
       <div class="head-image"></div>
       <div class="head-content">
-        <h1 class="home-headline mt-10 mb-4">I'm Pando</h1>
-        <div class="mb-10">
+        <h1 class="home-headline">I'm Pando</h1>
+        <div class="">
           <div class="home-sub-headline f-greyscale-3">
             A decentralized financial network built with the
             <a href="https://developers.mixin.one/document/mainnet/mtg">MTG</a>
@@ -50,7 +50,6 @@ class IndexPage extends Vue {
         title: "Pando Lake",
         subtitle:
           "A fully decentralized protocol for automated liquidity provision.",
-        status: "Open beta",
         runnable: true,
         icon: require("~/assets/images/products/lake.png"),
         icon_hover: require("~/assets/images/products/lake-white.png"),
@@ -64,7 +63,6 @@ class IndexPage extends Vue {
         title: "Pando Leaf",
         subtitle:
           "A decentralized financial network, implement a derivatives liquidity protocol.",
-        status: "Open beta",
         runnable: true,
         icon: require("~/assets/images/products/leaf.png"),
         icon_hover: require("~/assets/images/products/leaf-white.png"),
@@ -77,8 +75,7 @@ class IndexPage extends Vue {
         name: "rings",
         title: "Pando Rings",
         subtitle: "An algorithmic, autonomous interest rate protocol.",
-        status: "Coming soon",
-        runnable: false,
+        runnable: true,
         icon: require("~/assets/images/products/rings.png"),
         icon_hover: require("~/assets/images/products/rings-white.png"),
         launch_label: "Go for a loan",
@@ -90,7 +87,6 @@ class IndexPage extends Vue {
         name: "other",
         title: "Pando Root",
         subtitle: "The mystery project, coming soon",
-        status: "Coming soon",
         runnable: false,
         icon: require("~/assets/images/products/other.png"),
         icon_hover: require("~/assets/images/products/other.png"),
@@ -116,7 +112,7 @@ export default IndexPage;
 
 .head {
   height: 340px;
-  background: transparent url(~/assets/images/head-bg.png) center center
+  background: transparent url(~/assets/images/head-bg.png) 100px center
     no-repeat;
   background-size: contain;
   margin-bottom: 96px;
@@ -124,6 +120,7 @@ export default IndexPage;
   align-items: flex-end;
   flex-direction: row-reverse;
   display: flex;
+  overflow: hidden;
   .head-image {
     width: 242px;
     height: 285px;
@@ -131,6 +128,7 @@ export default IndexPage;
       no-repeat;
     background-size: contain;
     display: block;
+    transform: translate(2px, 25px);
   }
   .head-content {
     .home-headline {
@@ -146,19 +144,22 @@ export default IndexPage;
 
 @media only screen and (max-width: 600px) {
   .head {
-    padding: 20px;
+    padding: 20px 20px 2px 20px;
     display: block;
-    margin-bottom: 20px;
-    background: transparent url(~/assets/images/head-bg-small.png) center center
+    height: auto;
+    margin-bottom: 0px;
+    background: transparent url(~/assets/images/head-bg-small.png) center 0
       no-repeat;
     background-size: contain;
     .head-image {
       height: 165px;
-      margin: 0 auto;
+      margin: 10px auto 16px auto;
+      transform: translate(0px, 0px);
     }
     .head-content {
       .home-headline {
         font-size: 24px;
+        margin-bottom: 12px;
       }
       .home-sub-headline {
         font-size: 14px;

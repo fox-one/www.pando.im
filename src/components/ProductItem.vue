@@ -2,7 +2,7 @@
   <div class="product-wrapper">
     <div
       class="product"
-      :class="product.name"
+      :class="`${product.name} ${disableAni ? 'no-ani' : 'ani'}`"
       :style="productStyles"
       @mouseover="mouseover"
       @mouseleave="mouseleave"
@@ -79,6 +79,13 @@ class ProductItem extends Vue {
     return { "background-color": this.product?.bg_color || "#fafafa" };
   }
 
+  get disableAni() {
+    if (!this.product.runnable || this.$utils.helper.isMobile()) {
+      return true;
+    }
+    return false;
+  }
+
   mouseover() {
     this.hover = true;
     this.animation.play();
@@ -111,6 +118,16 @@ export default ProductItem;
   height: 350px;
   padding: 4px;
 }
+.product.no-ani {
+  .product.no-ani {
+  }
+  .product-screenshot-image {
+    transform: rotateZ(5deg) !important;
+  }
+  .product-screenshot-frame-image {
+    display: none !important;
+  }
+}
 .product {
   background-color: #f1fdf3;
   height: 100%;
@@ -129,33 +146,53 @@ export default ProductItem;
   }
   &.leaf {
     background: linear-gradient(139.54deg, #f1fdf3 55.1%, #f1fdf3 87.88%);
+    .product-button:hover {
+      ::v-deep {
+        .v-btn__content {
+          color: #c0f243;
+        }
+      }
+    }
   }
   &.lake {
     background: linear-gradient(139.54deg, #edfbfc 55.1%, #edfbfc 87.88%);
+    .product-button:hover {
+      ::v-deep {
+        .v-btn__content {
+          color: #6feaf6;
+        }
+      }
+    }
   }
   &.rings {
     background: linear-gradient(139.54deg, #fefaf3 55.1%, #fefaf3 87.88%);
+    .product-button:hover {
+      ::v-deep {
+        .v-btn__content {
+          color: #fbd644;
+        }
+      }
+    }
   }
   .product-screenshot-image,
   .product-screenshot-frame-image {
-    width: 240px;
-    height: 470px;
+    width: 200px;
+    height: 391px;
     position: absolute;
-    right: -30px;
-    bottom: -200px;
-    transform: rotateZ(7deg);
+    right: -14px;
+    bottom: -120px;
+    transform: rotateZ(5deg);
+    transition: all 0.2s ease-in-out;
   }
   .product-screenshot-image {
-    transition: all 0.2s ease-in-out;
     opacity: 1;
   }
   .product-screenshot-frame-image {
-    transition: all 0.2s ease-in-out;
     opacity: 0;
   }
   .product-ani {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     position: absolute;
     top: 160px;
     right: 40px;
@@ -190,8 +227,13 @@ export default ProductItem;
       }
     }
   }
+  .product-help-link:hover {
+    .product-button-icon {
+      transform: translateX(8px);
+    }
+  }
 }
-.product:hover {
+.product.ani:hover {
   .product-icon-image {
     display: none;
   }
@@ -207,16 +249,17 @@ export default ProductItem;
   &.rings {
     background: linear-gradient(139.54deg, #fbd644 55.1%, #ffdaa3 87.88%);
   }
-  .product-button-icon {
-    transform: translateX(10px);
+  .product-screenshot-image,
+  .product-screenshot-frame-image {
+    right: 0px;
+    bottom: -120px;
+    transform: rotateZ(0deg);
   }
   .product-screenshot-image {
-    transform: rotateZ(0deg);
     opacity: 0;
   }
   .product-screenshot-frame-image {
     opacity: 1;
-    transform: rotateZ(0deg);
   }
   .product-ani {
     opacity: 1;
