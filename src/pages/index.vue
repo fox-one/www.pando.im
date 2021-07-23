@@ -7,7 +7,11 @@
         <div class="">
           <div class="home-sub-headline f-greyscale-3">
             A decentralized financial network built with the
-            <a href="https://developers.mixin.one/document/mainnet/mtg">MTG</a>
+            <a
+              href="https://developers.mixin.one/document/mainnet/mtg/overview"
+              target="_blank"
+              >MTG</a
+            >
             that includes a series of open financial protocols.
           </div>
         </div>
