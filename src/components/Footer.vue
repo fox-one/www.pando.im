@@ -8,6 +8,8 @@
         <a href="https://docs.pando.im/" target="_blank">Docs</a>
         <span class="mx-2">·</span>
         <a href="https://blog.pando.im/" target="_blank">Blog</a>
+        <span class="mx-2">·</span>
+        <a href="https://discord.gg/CNS4QQ6w5u" target="_blank">Discord</a>
       </div>
       <v-spacer />
       <div class="f-caption f-greyscale-3">Copyright © 2021 Pando</div>
