@@ -5,6 +5,8 @@
         <v-icon color="black">{{ $icons.mdiTwitter }}</v-icon>
       </div>
       <div class="f-caption f-greyscale-3 links">
+        <a href="https://docs.pando.im/" target="_blank">Docs</a>
+        <span class="mx-2">·</span>
         <a href="https://blog.pando.im/" target="_blank">Blog</a>
       </div>
       <v-spacer />
