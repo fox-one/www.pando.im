@@ -4,7 +4,7 @@
       <div class="head-image"></div>
       <div class="head-content">
         <h1 class="home-headline">I'm Pando</h1>
-        <div class="">
+        <h2 class="">
           <div class="home-sub-headline f-greyscale-3">
             A decentralized financial network built with the
             <a
@@ -14,7 +14,7 @@
             >
             that includes a series of open financial protocols.
           </div>
-        </div>
+        </h2>
       </div>
     </div>
 
@@ -142,6 +142,7 @@ export default IndexPage;
     .home-sub-headline {
       font-size: 16px;
       max-width: 480px;
+      font-weight: normal !important;
     }
   }
 }

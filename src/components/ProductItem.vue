@@ -24,7 +24,7 @@
             class="product-icon-image product-icon-image-hover"
           />
         </div>
-        <div class="product-title mb-2">{{ product.title }}</div>
+        <h3 class="product-title mb-2">{{ product.title }}</h3>
         <div class="product-subtitle mb-3">{{ product.subtitle }}</div>
         <a
           v-if="product.help_label"

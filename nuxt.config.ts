@@ -5,12 +5,12 @@ import { isProduct, GA } from "./src/constants";
 const config: NuxtConfig = {
   ssr: false,
   router: {
-    mode: "hash",
+    mode: "history",
   },
   srcDir: "./src",
   head: {
     titleTemplate: "%s",
-    title: "I'm Pando",
+    title: "I'm Pando - An Open Financial network",
     meta: [
       { charset: "utf-8" },
       {
@@ -21,7 +21,8 @@ const config: NuxtConfig = {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
+        content:
+          "A decentralized financial network built with the MTG that includes a series of open financial protocols.",
       },
     ],
     link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
