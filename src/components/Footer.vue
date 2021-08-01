@@ -1,29 +1,45 @@
 <template>
   <div class="footer">
-    <div class="footer-inner d-flex align-center mt-4">
+    <div class="footer-inner mt-4">
       <v-row>
-        <v-col cols="12" md="9">
-          <div class="d-flex">
+        <v-col cols="12">
+          <div class="d-flex social-icons">
             <a
-              v-for="link in links"
-              :key="link.label"
-              :title="link.label"
-              :src="link.url"
-              class="social-icons mr-4"
+              v-for="icon in socialIcons"
+              :key="icon.label"
+              :title="icon.label"
+              :href="icon.url"
+              class="social-icons mx-2"
               target="_blank"
             >
               <v-img
                 :height="32"
                 :width="32"
-                :src="link.icon"
-                :alt="link.alt"
+                :src="icon.icon"
+                :alt="icon.alt"
               />
             </a>
           </div>
         </v-col>
+      </v-row>
+      <v-row>
         <v-col cols="12" md="3">
-          <div class="f-caption f-greyscale-3 text-right">
-            Copyright © 2021 Pando
+          <div class="f-caption f-greyscale-3">Copyright © 2021 Pando</div>
+        </v-col>
+        <v-col cols="12" md="9">
+          <div class="links d-flex text-right">
+            <a
+              v-for="link in links"
+              :key="link.label"
+              :title="link.label"
+              :href="link.url"
+              class="link d-flex"
+              target="_blank"
+            >
+              <span class="f-caption font-weight-bold">
+                {{ link.label }}
+              </span>
+            </a>
           </div>
         </v-col>
       </v-row>
@@ -42,20 +58,8 @@ class ProductItem extends Vue {
     return { "background-color": this.product?.bg_color || "#fafafa" };
   }
 
-  get links() {
+  get socialIcons() {
     return [
-      {
-        label: "Docs",
-        alt: "Pando's documents for users and developers",
-        icon: require("~/assets/images/meta-docs.svg"),
-        url: "https://docs.pando.im",
-      },
-      {
-        label: "Blog",
-        alt: "Pando's official blog",
-        icon: require("~/assets/images/meta-blog.svg"),
-        url: "https://blog.pando.im",
-      },
       {
         label: "Twitter",
         alt: "Pando's official Twitter account",
@@ -67,6 +71,23 @@ class ProductItem extends Vue {
         alt: "Pando's official discord server",
         icon: require("~/assets/images/meta-discord.svg"),
         url: "https://discord.gg/CNS4QQ6w5u",
+      },
+    ];
+  }
+
+  get links() {
+    return [
+      {
+        label: "Documents",
+        alt: "Pando's documents for users and developers",
+        icon: require("~/assets/images/meta-docs.svg"),
+        url: "https://docs.pando.im",
+      },
+      {
+        label: "Blog",
+        alt: "Pando's official blog",
+        icon: require("~/assets/images/meta-blog.svg"),
+        url: "https://docs.pando.im/blog",
       },
     ];
   }
@@ -82,12 +103,32 @@ export default ProductItem;
 }
 .footer-inner {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
+  .links {
+    justify-content: flex-end;
+    .link {
+      margin-left: 24px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 600px) {
   .footer-inner {
     padding-left: 20px;
     padding-right: 20px;
+    text-align: center;
+    .social-icons {
+      justify-content: center;
+    }
+    .links {
+      justify-content: center;
+      .link {
+        margin-left: 10px;
+        margin-left: 10px;
+      }
+    }
   }
 }
 </style>
