@@ -22,7 +22,7 @@
           </div>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row class="meta-row">
         <v-col cols="12" md="3">
           <div class="f-caption f-greyscale-3">Copyright © 2021 Pando</div>
         </v-col>
@@ -119,6 +119,10 @@ export default ProductItem;
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
+    .meta-row {
+      display: flex;
+      flex-direction: column-reverse;
+    }
     .social-icons {
       justify-content: center;
     }
