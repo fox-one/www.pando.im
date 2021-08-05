@@ -23,3 +23,11 @@ export function isMobile() {
   }
   return false;
 }
+
+export function getLocale() {
+  let locale = "en";
+  if (navigator.language.includes("ja")) {
+    locale = "ja";
+  }
+  return locale;
+}

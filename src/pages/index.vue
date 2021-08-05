@@ -3,16 +3,17 @@
     <div class="head">
       <div class="head-image"></div>
       <div class="head-content">
-        <h1 class="home-headline">I'm Pando</h1>
+        <h1 class="home-headline">{{ $t("headline") }}</h1>
         <h2 class="">
           <div class="home-sub-headline f-greyscale-3">
-            A decentralized financial network built with the
+            {{ $t("description_1") }}
             <a
               href="https://developers.mixin.one/document/mainnet/mtg/overview"
               target="_blank"
-              >MTG</a
             >
-            that includes a series of open financial protocols.
+              {{ $t("description_mtg") }}
+            </a>
+            {{ $t("description_2") }}
           </div>
         </h2>
       </div>
@@ -29,68 +30,62 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Mixins } from "vue-property-decorator";
 import ProductItem from "@/components/ProductItem.vue";
+import mixins from "@/mixins";
 
 @Component({
-  head() {
-    return {
-      title: this.title,
-    };
-  },
   components: {
     ProductItem,
   },
 })
-class IndexPage extends Vue {
+class IndexPage extends Mixins(mixins.page) {
   get title() {
-    return "I'm Pando";
+    return this.$t("title.home") as string;
   }
 
   get products() {
     return [
       {
         name: "lake",
-        title: "Pando Lake",
-        subtitle:
-          "A fully decentralized protocol for automated liquidity provision.",
+        title: this.$t("product.lake.title"),
+        subtitle: this.$t("product.lake.subtitle"),
         runnable: true,
         icon: require("~/assets/images/products/lake.png"),
         icon_hover: require("~/assets/images/products/lake-white.png"),
-        launch_label: "Swap coins",
+        launch_label: this.$t("product.lake.launch_label"),
         launch_url: "https://lake.pando.im",
-        help_label: "Learn more",
+        help_label: this.$t("product.lake.help_label"),
         help_url: "https://docs.pando.im/docs/lake/intro",
       },
       {
         name: "leaf",
-        title: "Pando Leaf",
-        subtitle:
-          "A decentralized financial network, implement a derivatives liquidity protocol.",
+        title: this.$t("product.leaf.title"),
+        subtitle: this.$t("product.leaf.subtitle"),
         runnable: true,
         icon: require("~/assets/images/products/leaf.png"),
         icon_hover: require("~/assets/images/products/leaf-white.png"),
-        launch_label: "Go to mortgage",
+        launch_label: this.$t("product.leaf.launch_label"),
         launch_url: "https://leaf.pando.im",
-        help_label: "Learn more",
+        help_label: this.$t("product.leaf.help_label"),
         help_url: "https://docs.pando.im/docs/leaf/intro",
       },
       {
         name: "rings",
-        title: "Pando Rings",
-        subtitle: "An algorithmic, autonomous interest rate protocol.",
+        title: this.$t("product.rings.title"),
+        subtitle: this.$t("product.rings.subtitle"),
         runnable: true,
         icon: require("~/assets/images/products/rings.png"),
         icon_hover: require("~/assets/images/products/rings-white.png"),
-        launch_label: "Go for a loan",
+        launch_label: this.$t("product.rings.launch_label"),
         launch_url: "https://rings.pando.im",
-        help_label: "Learn more",
+        help_label: this.$t("product.rings.help_label"),
         help_url: "https://docs.pando.im/docs/rings/intro",
       },
       {
         name: "other",
-        title: "Pando Root",
-        subtitle: "The mystery project, coming soon",
+        title: this.$t("product.root.title"),
+        subtitle: this.$t("product.root.subtitle"),
         runnable: false,
         icon: require("~/assets/images/products/other.png"),
         icon_hover: require("~/assets/images/products/other.png"),

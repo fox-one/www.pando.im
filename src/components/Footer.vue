@@ -31,7 +31,7 @@
             <a
               v-for="link in links"
               :key="link.label"
-              :title="link.label"
+              :title="link.title"
               :href="link.url"
               class="link d-flex"
               target="_blank"
@@ -78,14 +78,14 @@ class ProductItem extends Vue {
   get links() {
     return [
       {
-        label: "Documents",
-        alt: "Pando's documents for users and developers",
+        label: this.$t("footer.documents"),
+        title: this.$t("footer.documents.title"),
         icon: require("~/assets/images/meta-docs.svg"),
         url: "https://docs.pando.im",
       },
       {
-        label: "Blog",
-        alt: "Pando's official blog",
+        label: this.$t("footer.blog"),
+        title: this.$t("footer.blog.title"),
         icon: require("~/assets/images/meta-blog.svg"),
         url: "https://docs.pando.im/blog",
       },

@@ -10,7 +10,7 @@ const config: NuxtConfig = {
   srcDir: "./src",
   head: {
     titleTemplate: "%s",
-    title: "I'm Pando - An Open Financial network",
+    title: "Pando Official Website - An Open Financial network",
     meta: [
       { charset: "utf-8" },
       {
