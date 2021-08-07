@@ -7,7 +7,7 @@
         <h2 class="">
           <div class="home-sub-headline f-greyscale-3">
             {{ $t("description") }}
-          </div
+          </div>
         </h2>
       </div>
     </div>
