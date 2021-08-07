@@ -5,9 +5,10 @@
       <div class="head-content">
         <h1 class="home-headline">{{ $t("headline") }}</h1>
         <h2 class="">
-          <div class="home-sub-headline f-greyscale-3">
-            {{ $t("description") }}
-          </div>
+          <div
+            class="home-sub-headline f-greyscale-3"
+            v-html="$t('description')"
+          ></div>
         </h2>
       </div>
     </div>
