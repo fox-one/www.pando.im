@@ -1,9 +1,7 @@
 {
   "hello": "Hello",
   "headline": "I'm Pando",
-  "description_1": "A decentralized financial network built with the",
-  "description_mtg": "MTG",
-  "description_2": "that includes a series of open financial protocols.",
+  "description": "A decentralized financial network built with the <a href='https://developers.mixin.one/document/mainnet/mtg/overview' target='_blank'>MTG</a> that includes a series of open financial protocols.",
 
   "title.home": "Pando Official Website",
 

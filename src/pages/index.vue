@@ -6,15 +6,8 @@
         <h1 class="home-headline">{{ $t("headline") }}</h1>
         <h2 class="">
           <div class="home-sub-headline f-greyscale-3">
-            {{ $t("description_1") }}
-            <a
-              href="https://developers.mixin.one/document/mainnet/mtg/overview"
-              target="_blank"
-            >
-              {{ $t("description_mtg") }}
-            </a>
-            {{ $t("description_2") }}
-          </div>
+            {{ $t("description") }}
+          </div
         </h2>
       </div>
     </div>

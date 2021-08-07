@@ -1,9 +1,7 @@
 {
   "hello": "こんにちは",
   "headline": "パンドです",
-  "description_1": "で構築された分散型金融ネットワーク",
-  "description_mtg": "MTG",
-  "description_2": "一連のオープンな金融プロトコルが含まれています.",
+  "description": "<a href='https://developers.mixin.one/document/mainnet/mtg/overview' target='_blank'>MTG</a>で構築された分散型金融ネットワーク,一連のオープンな金融プロトコルが含まれています",
 
   "title.home": "パンド公式サイト",
 
