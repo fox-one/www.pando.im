@@ -64,7 +64,7 @@ class ProductItem extends Vue {
         label: "Twitter",
         alt: "Pando's official Twitter account",
         icon: require("~/assets/images/meta-twitter.svg"),
-        url: "https://twitter.com",
+        url: "https://twitter.com/pando_im",
       },
       {
         label: "Discord",
