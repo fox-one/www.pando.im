@@ -4,6 +4,8 @@ import { isProduct, GA } from "./src/constants";
 
 const config: NuxtConfig = {
   ssr: false,
+  target: "static",
+  // mode: 'ssr',
   router: {
     mode: "history",
   },
