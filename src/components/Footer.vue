@@ -70,7 +70,7 @@ class ProductItem extends Vue {
         label: "Discord",
         alt: "Pando's official discord server",
         icon: require("~/assets/images/meta-discord.svg"),
-        url: "https://discord.gg/CNS4QQ6w5u",
+        url: "https://discord.gg/ek45g3Cymd",
       },
     ];
   }
