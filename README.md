@@ -47,7 +47,7 @@ please check out the yaml file content
 
 ```bash
 # upload
-$ crowdin upload
+$ crowdin upload -T $CROWDIN_PERSONAL_TOKEN
 # download
-$ crowdin download
+$ crowdin download -T $CROWDIN_PERSONAL_TOKEN
 ```
