@@ -97,7 +97,7 @@ export default ProductItem;
 
 <style lang="scss" scoped>
 .footer {
-  margin-top: 100px;
+  padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   height: 150px;
 }
