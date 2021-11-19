@@ -1,21 +1,31 @@
 <template>
   <div class="page">
-    <featured-header />
+    <featured-header
+      :title="'A fully decentralized protocol for automated liquidity provision'"
+      :primary-button="buttons[0]"
+      :secondary-button="buttons[1]"
+      :name="'leaf'"
+      :logo="require('~/assets/images/products/leaf-with-title.png')"
+      :picture="'/screenshots/leaf-sideview.png'"
+      :bg-color="'#F1FDF3'"
+      :color="'#8FE613'"
+    />
     <hlight-section
-      :title="'4swap is the community editon of Pando Lake'"
-      :text="'4swap is another decentralized protocol for automated liquidity provision on Mixin Network'"
-      :label="'Explore 4swap'"
-      :image="require('~/assets/images/products/lake-hlight.png')"
-      :url="'https://app.4swap.org'"
+      :title="'Deposit collateral to generate pUSD in Pando Leaf'"
+      :text="'Pando USD is considered a stablecoin pegged to the US Dollar'"
+      :label="'Explore Leaf'"
+      :image="require('~/assets/images/products/leaf-hlight.png')"
+      :url="'https://leaf.pando.im'"
     />
     <feature-list-section
-      :title="'Features of Pando Lake'"
+      :title="'Features of Pando Leaf'"
       :features="features"
-      :image="require('~/assets/images/products/lake-features.png')"
+      :image="require('~/assets/images/products/leaf-features.png')"
     />
+    <div class="py-10" />
     <mtg-section
       :title="'Powered by MTG'"
-      :text="'4swap is built with Mixin Trusted Group Right now, there are 5 genesis nodes who serve the trades'"
+      :text="'Leaf is built with Mixin Trusted Group. At present, there are 6 genesis nodes who serve the service.'"
       :members="members"
     />
   </div>
@@ -28,6 +38,7 @@ import HlightSection from "@/components/sections/HlightSection.vue";
 import FeatureListSection from "@/components/sections/FeatureListSection.vue";
 import MtgSection from "@/components/sections/MtgSection.vue";
 import mixins from "@/mixins";
+import { mtgMembers } from "~/constants";
 
 @Component({
   components: {
@@ -37,9 +48,22 @@ import mixins from "@/mixins";
     MtgSection,
   },
 })
-class LakePage extends Mixins(mixins.page) {
+class LeafPage extends Mixins(mixins.page) {
   get title() {
-    return this.$t("title.lake") as string;
+    return this.$t("title.leaf") as string;
+  }
+
+  get buttons() {
+    return [
+      {
+        label: "Go To Mortgage",
+        url: "https://leaf.pando.im",
+      },
+      {
+        label: "Documents",
+        url: "https://docs.pando.im/docs/leaf/intro",
+      },
+    ];
   }
 
   get features() {
@@ -63,40 +87,14 @@ class LakePage extends Mixins(mixins.page) {
   }
 
   get members() {
-    return [
-      {
-        icon: require("~/assets/images/mtg-members/pando-mtg-member-fox.png"),
-        title: "Fox.One",
-        text: "The main develop team of Pando",
-      },
-      {
-        icon: require("~/assets/images/mtg-members/pando-mtg-member-mixin.png"),
-        title: "Mixin",
-        text: "The core develop team of Mixin Network",
-        url: "https://mixin.one",
-      },
-      {
-        icon: require("~/assets/images/mtg-members/pando-mtg-member-poolin.png"),
-        title: "Poolin",
-        text: "Industry-leading mining service provider",
-        url: "https://poolin.com",
-      },
-      {
-        icon: require("~/assets/images/mtg-members/pando-mtg-member-b1.png"),
-        title: "Big.ONE",
-        text:
-          "A trading platform provides users with the secure and trusteeship services",
-        url: "https://big.one",
-      },
-      {
-        icon: require("~/assets/images/mtg-members/pando-mtg-member-ri.png"),
-        title: "BOX Group",
-        text: "BOX investment community",
-      },
-    ];
+    const names = ["fox", "mixin", "b1", "poolin", "exin", "cedric"];
+    const ret = mtgMembers.filter((x) => {
+      return names.includes(x.name);
+    });
+    return ret;
   }
 }
-export default LakePage;
+export default LeafPage;
 </script>
 
 <style lang="scss" scoped>

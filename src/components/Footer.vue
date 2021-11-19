@@ -72,6 +72,18 @@ class ProductItem extends Vue {
         icon: require("~/assets/images/meta-discord.svg"),
         url: "https://discord.gg/ek45g3Cymd",
       },
+      {
+        label: "Telegram",
+        alt: "Pando's official telegram server",
+        icon: require("~/assets/images/meta-telegram.svg"),
+        url: "https://t.me/pandoim",
+      },
+      {
+        label: "Reddit",
+        alt: "Pando's official reddit server",
+        icon: require("~/assets/images/meta-reddit.svg"),
+        url: "https://www.reddit.com/r/pando/",
+      },
     ];
   }
 

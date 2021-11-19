@@ -6,44 +6,56 @@
 
       <div class="dummy-members-wrapper">
         <div class="members dummy-members">
-          <div class="member mb-5 pa-4"></div>
-          <div class="member mb-5 pa-4"></div>
-          <div class="member mb-5 pa-4"></div>
+          <div class="member mb-5"></div>
+          <div class="member mb-5"></div>
+          <div class="member mb-5"></div>
         </div>
         <div class="mask"></div>
       </div>
 
       <div class="members">
         <div
-          class="member mb-5 pa-4"
-          v-for="(mem, ix) in members"
+          class="member mb-5"
+          :class="mem.dummy ? 'dummy-member' : ''"
+          v-for="(mem, ix) in modifiedMembers"
           :key="`mem-${ix}`"
+          @click="visit(mem)"
         >
-          <img class="icon" :src="mem.icon" />
-          <div class="f-title-2">
-            <template v-if="mem.url">
-              <a :href="mem.url" :title="mem.title" target="_blank">{{
-                mem.title
-              }}</a>
-            </template>
-            <template v-else>
-              {{ mem.title }}
-            </template>
-          </div>
-          <div class="f-body-2 f-greyscale-3">
-            {{ mem.text }}
-          </div>
-        </div>
-        <div class="member dummy-member mb-5 pa-4">
-          <div class="f-body-2 f-greyscale-3">More MTG members...</div>
+          <template v-if="mem.dummy">
+            <div class="f-body-2 f-greyscale-3">More MTG members...</div>
+          </template>
+          <template v-else>
+            <img
+              class="external-link-icon"
+              :src="require('~/assets/images/external-link.svg')"
+            />
+            <img class="icon" :src="mem.icon" />
+            <div class="f-title-2 mb-2">
+              <template v-if="mem.url">
+                <a
+                  :href="mem.url"
+                  :title="mem.title"
+                  target="_blank"
+                  @click.stop="() => {}"
+                  >{{ mem.title }}</a
+                >
+              </template>
+              <template v-else>
+                {{ mem.title }}
+              </template>
+            </div>
+            <div class="f-body-2 f-greyscale-3">
+              {{ mem.text }}
+            </div>
+          </template>
         </div>
       </div>
 
       <div class="dummy-members-wrapper">
         <div class="members dummy-members">
-          <div class="member mb-5 pa-4"></div>
-          <div class="member mb-5 pa-4"></div>
-          <div class="member mb-5 pa-4"></div>
+          <div class="member mb-5"></div>
+          <div class="member mb-5"></div>
+          <div class="member mb-5"></div>
         </div>
         <div class="mask invert"></div>
       </div>
@@ -67,17 +79,33 @@ class MtgSection extends Vue {
       section.style.height = inner.offsetHeight + "px";
     }, 100);
   }
+
+  visit(mem) {
+    if (mem.url) {
+      window.open(mem.url, "_blank");
+    }
+  }
+
+  get modifiedMembers() {
+    let mems = this.members.slice();
+    if (mems.length % 3 === 1) {
+      // insert 2 dummy members
+      mems = mems.concat([{ dummy: true }, { dummy: true }]);
+    } else if (mems.length % 3 === 2) {
+      // insert one dummy member
+      mems = mems.concat([{ dummy: true }]);
+    }
+    return mems;
+  }
 }
 export default MtgSection;
 </script>
 
 <style lang="scss" scoped>
 .section {
-  clear: both;
   max-width: 960px;
   padding-top: 0;
   padding-bottom: 0;
-  // position: relative;
 }
 
 .section-inner {
@@ -89,7 +117,6 @@ export default MtgSection;
   left: 0;
   right: 0;
   text-align: center;
-  padding: 40px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,15 +129,34 @@ export default MtgSection;
     margin: 0 auto;
     width: 100%;
     .member {
+      cursor: pointer;
       width: 309px;
       background: #fff;
       border-radius: 8px;
+      position: relative;
+      padding: 24px 16px;
       .icon {
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        filter: drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.06));
+      }
+      .external-link-icon {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        height: 24px;
+        width: 24px;
+        display: none;
+      }
+    }
+    .member:hover {
+      .external-link-icon {
+        display: block;
       }
     }
     .dummy-member {
+      cursor: default;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -150,6 +196,7 @@ export default MtgSection;
 }
 @media only screen and (max-width: 600px) {
   .section-inner {
+    padding: 40px 0;
     .members {
       flex-direction: column;
       align-items: center;

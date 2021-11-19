@@ -9,7 +9,11 @@
         <div class="content d-flex">
           <h3 class="section-title mb-5">{{ title }}</h3>
           <ul class="features">
-            <li v-for="feat in features" :key="feat.name" class="feat d-flex">
+            <li
+              v-for="feat in features"
+              :key="feat.name"
+              class="feat d-flex py-2"
+            >
               <img :src="feat.icon" class="icon mr-4" />
               <div class="feat-content mb-5">
                 <h4 class="f-title-2 mb-0">{{ feat.title }}</h4>
@@ -50,6 +54,7 @@ export default FeatureListSection;
   .right {
     flex: 1;
     align-items: center;
+    justify-content: flex-end;
     .content {
       flex-direction: column;
       padding-left: 80px;
