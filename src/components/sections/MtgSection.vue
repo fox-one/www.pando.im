@@ -2,7 +2,7 @@
   <section class="section" ref="section">
     <div class="section-inner" ref="inner">
       <h3 class="section-title mb-5">{{ title }}</h3>
-      <div class="mb-5 f-greyscale-3" v-html="text"></div>
+      <div class="mb-5 f-greyscale-3 px-5" v-html="text"></div>
 
       <div class="dummy-members-wrapper">
         <div class="members dummy-members">
