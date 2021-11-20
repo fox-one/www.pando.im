@@ -37,15 +37,16 @@
             $icons.mdiArrowRight
           }}</v-icon>
         </a>
-        <div class="product-buttons">
-          <f-button
-            v-if="product.launch_label"
-            :href="product.launch_url"
-            class="product-button d-flex align-center"
-            target="_blank"
-          >
-            {{ product.launch_label }}
-          </f-button>
+        <div v-if="product.route" class="product-buttons">
+          <nuxt-link :to="product.route">
+            <f-button
+              v-if="product.launch_label"
+              class="product-button d-flex align-center"
+              target="_blank"
+            >
+              {{ product.launch_label }}
+            </f-button>
+          </nuxt-link>
         </div>
       </div>
       <div class="product-screenshot">

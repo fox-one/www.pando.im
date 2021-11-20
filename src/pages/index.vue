@@ -15,9 +15,9 @@
 
     <div class="products d-flex">
       <product-item
-        v-for="product in products"
+        v-for="(product, ix) in products"
         :product="product"
-        :key="product.title"
+        :key="`product-${ix}`"
       />
     </div>
   </div>
@@ -47,6 +47,7 @@ class IndexPage extends Mixins(mixins.page) {
         runnable: true,
         icon: require("~/assets/images/products/lake.png"),
         icon_hover: require("~/assets/images/products/lake-white.png"),
+        route: "/lake",
         launch_label: this.$t("product.lake.launch_label"),
         launch_url: "https://lake.pando.im",
         help_label: this.$t("product.lake.help_label"),
@@ -59,6 +60,7 @@ class IndexPage extends Mixins(mixins.page) {
         runnable: true,
         icon: require("~/assets/images/products/leaf.png"),
         icon_hover: require("~/assets/images/products/leaf-white.png"),
+        route: "/leaf",
         launch_label: this.$t("product.leaf.launch_label"),
         launch_url: "https://leaf.pando.im",
         help_label: this.$t("product.leaf.help_label"),
@@ -71,6 +73,7 @@ class IndexPage extends Mixins(mixins.page) {
         runnable: true,
         icon: require("~/assets/images/products/rings.png"),
         icon_hover: require("~/assets/images/products/rings-white.png"),
+        route: "/rings",
         launch_label: this.$t("product.rings.launch_label"),
         launch_url: "https://rings.pando.im",
         help_label: this.$t("product.rings.help_label"),

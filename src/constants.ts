@@ -36,7 +36,7 @@ export const mtgMembers = [
   },
   {
     name: "box",
-    icon: require("~/assets/images/mtg-members/pando-mtg-member-ri.png"),
+    icon: require("~/assets/images/mtg-members/pando-mtg-member-box.png"),
     title: "BOX Group",
     text: "BOX investment community",
     url: "https://b.watch",

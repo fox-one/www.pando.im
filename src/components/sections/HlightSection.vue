@@ -5,19 +5,39 @@
         <div class="content d-flex">
           <h3 class="section-title mb-5">{{ title }}</h3>
           <div class="text f-body-1 f-greyscale-3 mb-5">
-            {{ text }}
+            <p v-for="(line, ix) in lines" :key="ix" v-html="line"></p>
           </div>
-          <a
-            v-if="url"
-            :href="url"
-            class="launch-link d-flex align-center font-weight-bold"
-            target="_blank"
-          >
-            {{ label }}
-            <v-icon :size="16" color="primary" class="launch-link-icon ml-1">{{
-              $icons.mdiArrowRight
-            }}</v-icon>
-          </a>
+          <div class="">
+            <a
+              v-if="url"
+              :href="url"
+              class="launch-link d-flex align-center font-weight-bold"
+              target="_blank"
+            >
+              {{ label }}
+              <v-icon
+                :size="16"
+                color="primary"
+                class="launch-link-icon ml-1"
+                >{{ $icons.mdiArrowRight }}</v-icon
+              >
+            </a>
+            <br />
+            <a
+              v-if="url2"
+              :href="url2"
+              class="launch-link d-flex align-center font-weight-bold"
+              target="_blank"
+            >
+              {{ label2 }}
+              <v-icon
+                :size="16"
+                color="primary"
+                class="launch-link-icon ml-1"
+                >{{ $icons.mdiArrowRight }}</v-icon
+              >
+            </a>
+          </div>
         </div>
       </div>
 
@@ -35,9 +55,17 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 class HlightSection extends Vue {
   @Prop({ default: "title" }) title!: string;
   @Prop({ default: "text" }) text!: string;
+  @Prop({ default: "" }) image!: string;
   @Prop({ default: "label" }) label!: string;
   @Prop({ default: "" }) url!: string;
-  @Prop({ default: "" }) image!: string;
+  @Prop({ default: "label" }) label2!: string;
+  @Prop({ default: "" }) url2!: string;
+
+  get lines() {
+    if (!this.text) return [];
+    if (typeof this.text === "string") return [this.text];
+    return this.text;
+  }
 }
 export default HlightSection;
 </script>

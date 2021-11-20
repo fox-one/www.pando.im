@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <featured-header
-      :title="'A decentralized protocol implement for automated liquidity provision'"
+      :title="$t('product.lake.subtitle')"
       :primary-button="buttons[0]"
       :secondary-button="buttons[1]"
       :name="'lake'"
@@ -11,21 +11,23 @@
       :color="'#0FC2FC'"
     />
     <hlight-section
-      :title="'4swap is the community editon of Pando Lake'"
-      :text="'4swap is another decentralized protocol for automated liquidity provision on Mixin Network'"
-      :label="'Explore 4swap'"
+      :title="$t('product.lake.hlight')"
+      :text="hlightTexts"
       :image="require('~/assets/images/products/lake-hlight.png')"
-      :url="'https://app.4swap.org'"
+      :label="$t('explore_label', { suffix: $t('product.lake.title') })"
+      :url="'https://lake.pando.im'"
+      :label2="$t('explore_label', { suffix: $t('product.lake.title_4swap') })"
+      :url2="'https://app.4swap.org'"
     />
     <feature-list-section
-      :title="'Features of Pando Lake & 4swap'"
+      :title="$t('features_of', { suffix: $t('product.lake.title_both') })"
       :features="features"
       :image="require('~/assets/images/products/lake-features.png')"
     />
     <div class="py-10" />
     <mtg-section
-      :title="'Powered by MTG'"
-      :text="'4swap is built with Mixin Trusted Group. At present, there are 5 genesis nodes who serve the trades.'"
+      :title="$t('powered_by_mtg')"
+      :text="$t('product.lake.mtg_text')"
       :members="members"
     />
   </div>
@@ -50,17 +52,24 @@ import { mtgMembers } from "~/constants";
 })
 class LakePage extends Mixins(mixins.page) {
   get title() {
-    return this.$t("title.lake") as string;
+    return this.$t("product.lake.title") as string;
+  }
+
+  get hlightTexts() {
+    return [
+      this.$t("product.lake.hlight_text1"),
+      this.$t("product.lake.hlight_text2"),
+    ];
   }
 
   get buttons() {
     return [
       {
-        label: "Swap Coins",
+        label: this.$t("product.lake.launch_label"),
         url: "https://lake.pando.im",
       },
       {
-        label: "Documents",
+        label: this.$t("documents"),
         url: "https://docs.pando.im/docs/lake/intro",
       },
     ];
@@ -70,18 +79,18 @@ class LakePage extends Mixins(mixins.page) {
     return [
       {
         icon: require("~/assets/images/products/lake-feat-1.png"),
-        title: "Zero Gas Fees",
-        text: "Trade without the need for gas fees",
+        title: this.$t("product.lake.feat_title_1"),
+        text: this.$t("product.lake.feat_text_1"),
       },
       {
         icon: require("~/assets/images/products/lake-feat-2.png"),
-        title: "Lightning Fast",
-        text: "Trades will be confirmed in seconds",
+        title: this.$t("product.lake.feat_title_2"),
+        text: this.$t("product.lake.feat_text_2"),
       },
       {
         icon: require("~/assets/images/products/lake-feat-3.png"),
-        title: "Cross Chains",
-        text: "Supports all mainstream blockchains",
+        title: this.$t("product.lake.feat_title_3"),
+        text: this.$t("product.lake.feat_text_3"),
       },
     ];
   }

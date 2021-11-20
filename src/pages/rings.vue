@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <featured-header
-      :title="'An algorithmic, autonomous interest rate protocol'"
+      :title="$t('product.rings.subtitle')"
       :primary-button="buttons[0]"
       :secondary-button="buttons[1]"
       :name="'rings'"
@@ -11,21 +11,21 @@
       :color="'#FF9E29'"
     />
     <hlight-section
-      :title="'A place where you can lend or borrow cryptocurrencies'"
-      :text="'Pando Rings lets users deposit cryptocurrencies and earn interest, or borrow other cryptoassets against them.'"
-      :label="'Explore Rings'"
+      :title="$t('product.rings.hlight')"
+      :text="$t('product.rings.hlight')"
+      :label="$t('explore_label', { suffix: $t('product.rings.title') })"
       :image="require('~/assets/images/products/rings-hlight.png')"
       :url="'https://rings.pando.im'"
     />
     <feature-list-section
-      :title="'Features of Pando Rings'"
+      :title="$t('features_of', { suffix: $t('product.rings.title') })"
       :features="features"
       :image="require('~/assets/images/products/rings-features.png')"
     />
     <div class="py-10" />
     <mtg-section
-      :title="'Powered by MTG'"
-      :text="'Rings is built with Mixin Trusted Group. At present, there are 6 genesis nodes who serve the service.'"
+      :title="$t('powered_by_mtg')"
+      :text="$t('product.rings.mtg_text')"
       :members="members"
     />
   </div>
@@ -50,17 +50,17 @@ import { mtgMembers } from "~/constants";
 })
 class RingsPage extends Mixins(mixins.page) {
   get title() {
-    return this.$t("title.rings") as string;
+    return this.$t("product.rings.title") as string;
   }
 
   get buttons() {
     return [
       {
-        label: "Go For A Loan",
+        label: this.$t("product.rings.launch_label"),
         url: "https://rings.pando.im",
       },
       {
-        label: "Documents",
+        label: this.$t("documents"),
         url: "https://docs.pando.im/docs/rings/intro",
       },
     ];
@@ -69,19 +69,14 @@ class RingsPage extends Mixins(mixins.page) {
   get features() {
     return [
       {
-        icon: require("~/assets/images/products/lake-feat-1.png"),
-        title: "Zero Gas Fees",
-        text: "Trade without the need for gas fees",
+        icon: require("~/assets/images/products/rings-feat-1.png"),
+        title: this.$t("product.rings.feat_title_1"),
+        text: this.$t("product.rings.feat_text_1"),
       },
       {
-        icon: require("~/assets/images/products/lake-feat-2.png"),
-        title: "Lightning Fast",
-        text: "Trades will be confirmed in seconds",
-      },
-      {
-        icon: require("~/assets/images/products/lake-feat-3.png"),
-        title: "Cross Chains",
-        text: "Supports all mainstream blockchains",
+        icon: require("~/assets/images/products/rings-feat-2.png"),
+        title: this.$t("product.rings.feat_title_2"),
+        text: this.$t("product.rings.feat_text_2"),
       },
     ];
   }

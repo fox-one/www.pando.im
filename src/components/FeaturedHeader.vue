@@ -7,12 +7,14 @@
             <div :style="{ backgroundImage: `url(${logo})` }" class="logo" />
           </div>
           <h1 class="section-title mb-5">{{ title }}</h1>
-          <div class="mb-5">
+          <div class="buttons">
             <a :href="primaryButton.url" class="button-wrapper">
-              <f-button class="button">{{ primaryButton.label }}</f-button>
+              <f-button class="button primary">{{
+                primaryButton.label
+              }}</f-button>
             </a>
             <a :href="secondaryButton.url" class="button-wrapper">
-              <f-button class="button" type="subtitle">{{
+              <f-button class="button secondary" type="">{{
                 secondaryButton.label
               }}</f-button>
             </a>
@@ -95,6 +97,9 @@ export default FeaturedHeader;
   .section-title {
     font-size: 32px;
   }
+  .buttons {
+    margin-bottom: 20px;
+  }
   .button-wrapper {
     &:first-child {
       margin-right: 20px;
@@ -103,6 +108,13 @@ export default FeaturedHeader;
       padding-left: 24px !important;
       padding-right: 24px !important;
     }
+    .primary {
+      box-shadow: 0px 4px 24px #f1f1f1, 0px 8px 16px #d3d3d3;
+    }
+    .secondary {
+      color: #000 !important;
+      background-color: #fff !important;
+    }
   }
 }
 .right {
@@ -110,6 +122,36 @@ export default FeaturedHeader;
     width: 353px;
     height: 360px;
     background-size: cover;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .section-inner {
+    .content {
+      flex-direction: column;
+    }
+  }
+  .left {
+    padding: 0 20px;
+    .buttons {
+      display: flex;
+      padding: 20px;
+      flex-direction: column;
+      .button-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .right {
+    .picture {
+      margin: 0 auto;
+      height: 260px;
+      background-size: contain;
+      background-position: center;
+    }
   }
 }
 </style>
