@@ -88,6 +88,7 @@ export default FeaturedHeader;
   }
 }
 .left {
+  flex: 1;
   .logo {
     height: 40px;
     display: inline-block;
@@ -109,7 +110,7 @@ export default FeaturedHeader;
       padding-right: 24px !important;
     }
     .primary {
-      box-shadow: 0px 4px 24px #f1f1f1, 0px 8px 16px #d3d3d3;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.01), 0 8px 16px rgba(0, 0, 0, 0.16);
     }
     .secondary {
       color: #000 !important;
