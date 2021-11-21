@@ -8,6 +8,8 @@
   "powered_by_mtg": "Powered by MTG",
   "features_of": "Features of {suffix}",
   "explore_label": "Explore {suffix}",
+  "learn_more": "Learn More",
+  "showcases": "Showcases",
 
   "title.home": "Pando Official Website",
 
@@ -69,6 +71,9 @@
 
   "product.root.title": "Pando Root",
   "product.root.subtitle": "The mystery project, coming soon.",
+
+  "dev.title": "It is easy to develop dApps based on Pando",
+  "dev.text": "Pando provides a set of developer-friendly APIs and SDK for third-party developers to build applications",
 
   "footer.documents": "Documents",
   "footer.documents.title": "Pando's documents for users and developers",

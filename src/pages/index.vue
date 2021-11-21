@@ -20,17 +20,21 @@
         :key="`product-${ix}`"
       />
     </div>
+
+    <dev-section />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Mixins } from "vue-property-decorator";
 import ProductItem from "@/components/ProductItem.vue";
+import DevSection from "@/components/sections/DevSection.vue";
 import mixins from "@/mixins";
 
 @Component({
   components: {
     ProductItem,
+    DevSection,
   },
 })
 class IndexPage extends Mixins(mixins.page) {
@@ -102,7 +106,7 @@ export default IndexPage;
 .products {
   flex-wrap: wrap;
   max-width: 960px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 40px auto;
   justify-content: space-between;
 }
 

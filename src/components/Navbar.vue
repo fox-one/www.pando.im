@@ -1,8 +1,7 @@
 <template>
   <div class="nav">
     <div class="nav-inner">
-      <div class="nav-logo">PANDO</div>
-      <div class="menu"></div>
+      <nuxt-link class="nav-logo" to="/">PANDO</nuxt-link>
     </div>
   </div>
 </template>
@@ -68,43 +67,27 @@ export default ProductItem;
 </script>
 
 <style lang="scss" scoped>
-.footer {
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  height: 150px;
+.nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 44px;
+  z-index: 10;
 }
-.footer-inner {
-  max-width: 960px;
+.nav-inner {
+  // max-width: 960px;
   margin: 0 auto 40px auto;
-  .links {
-    justify-content: flex-end;
-    .link {
-      margin-left: 24px;
-      &:first-child {
-        margin-left: 0;
-      }
-    }
+  padding: 20px;
+  .nav-logo {
+    background: transparent url(/favicon.png) no-repeat center center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    text-indent: -1000em;
+    overflow: hidden;
   }
 }
 @media only screen and (max-width: 600px) {
-  .footer-inner {
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-    .meta-row {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-    .social-icons {
-      justify-content: center;
-    }
-    .links {
-      justify-content: center;
-      .link {
-        margin-left: 10px;
-        margin-left: 10px;
-      }
-    }
-  }
 }
 </style>

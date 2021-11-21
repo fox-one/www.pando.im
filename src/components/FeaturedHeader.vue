@@ -94,6 +94,7 @@ export default FeaturedHeader;
     display: inline-block;
     background-size: contain;
     width: 100%;
+    background-position: left center;
   }
   .section-title {
     font-size: 32px;
@@ -133,6 +134,9 @@ export default FeaturedHeader;
   }
   .left {
     padding: 0 20px;
+    .logo {
+      background-position: center;
+    }
     .buttons {
       display: flex;
       padding: 20px;
