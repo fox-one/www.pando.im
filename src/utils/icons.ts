@@ -1,6 +1,7 @@
-import { mdiArrowRight, mdiTwitter } from "@mdi/js";
+import { mdiArrowRight, mdiOpenInNew, mdiPlus } from "@mdi/js";
 
 export default {
   mdiArrowRight,
-  mdiTwitter,
+  mdiOpenInNew,
+  mdiPlus,
 };

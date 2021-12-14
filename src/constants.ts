@@ -4,6 +4,14 @@ export const GA = "G-2MWG0DMS9R";
 
 export const API_BASE = "";
 
+export const fennecInstallURLs = {
+  firefox: "https://addons.mozilla.org/en-US/firefox/addon/fox_fennec/",
+  chrome:
+    "https://chrome.google.com/webstore/detail/fennec/eincngenkhohbbfpkohipekcmnkfamjp",
+  source: "https://github.com/fox-one/fennec",
+  raw: "https://github.com/fox-one/fennec/releases",
+};
+
 export const mtgMembers = [
   {
     name: "fox",

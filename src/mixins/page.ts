@@ -11,9 +11,7 @@ export interface Page extends Vue {
 @Component({
   head() {
     const vm = this as Page;
-    setTimeout(() => {
-      console.log(vm.title);
-    }, 100);
+
     return {
       title: vm.htmlTitle || vm.title || "Pando Official Website",
       meta: [
@@ -33,7 +31,8 @@ export interface Page extends Vue {
   },
 })
 export default class PageView extends Vue {
-  // @Mutation("app/SET_APPBAR") setAppbar;
+  @Mutation("app/setPageBgColor") setPageBgColor;
+  @Mutation("app/setDark") setDark;
 
   get appbar() {
     return {};
@@ -43,16 +42,32 @@ export default class PageView extends Vue {
     return "";
   }
 
+  get pageBgColor() {
+    return "white";
+  }
+
+  get isDark() {
+    return false;
+  }
+
   setLang() {
     const locale = this.$utils.helper.getLocale();
     this.$i18n.locale = locale;
-    // this?.$vuetify.lang.current = locale;
-    // dayjs.locale(locale);
   }
 
   setPageConfig() {
-    console.log(this.title);
+    console.log(this.pageBgColor);
+    if (this.pageBgColor) {
+      this.setPageBgColor(this.pageBgColor);
+    }
+
+    if (this.isDark) {
+      (this as any).$vuetify.theme.dark = this.isDark;
+      this.setDark(this.isDark);
+    }
+
     // this.setAppbar({ title: this.title, ...this.appbar });
+
     // setTimeout(() => {
     //   this.$utils.helper.loadMixinTheme();
     // }, 50);

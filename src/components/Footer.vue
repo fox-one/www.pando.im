@@ -12,21 +12,18 @@
               class="social-icons mx-2"
               target="_blank"
             >
-              <v-img
-                :height="32"
-                :width="32"
-                :src="icon.icon"
-                :alt="icon.alt"
-              />
+              <v-icon size="32"> {{ icon.icon }} </v-icon>
             </a>
           </div>
         </v-col>
       </v-row>
-      <v-row class="meta-row">
-        <v-col cols="12" md="3">
+
+      <v-row class="meta-row mb-3">
+        <v-col cols="12" md="3" class="pa-4">
           <div class="f-caption f-greyscale-3">Copyright © 2021 Pando</div>
         </v-col>
-        <v-col cols="12" md="9">
+
+        <v-col cols="12" md="9" class="pa-4">
           <div class="links d-flex text-right">
             <a
               v-for="link in links"
@@ -63,25 +60,25 @@ class ProductItem extends Vue {
       {
         label: "Twitter",
         alt: "Pando's official Twitter account",
-        icon: require("~/assets/images/meta-twitter.svg"),
+        icon: "$vuetify.icons.iconMetaTwitter",
         url: "https://twitter.com/pando_im",
       },
       {
         label: "Discord",
         alt: "Pando's official discord server",
-        icon: require("~/assets/images/meta-discord.svg"),
+        icon: "$vuetify.icons.iconMetaDiscord",
         url: "https://discord.gg/ek45g3Cymd",
       },
       {
         label: "Telegram",
         alt: "Pando's official telegram server",
-        icon: require("~/assets/images/meta-telegram.svg"),
+        icon: "$vuetify.icons.iconMetaTelegram",
         url: "https://t.me/pandoim",
       },
       {
         label: "Reddit",
         alt: "Pando's official reddit server",
-        icon: require("~/assets/images/meta-reddit.svg"),
+        icon: "$vuetify.icons.iconMetaReddit",
         url: "https://www.reddit.com/r/pando/",
       },
     ];
@@ -110,12 +107,12 @@ export default ProductItem;
 <style lang="scss" scoped>
 .footer {
   padding-top: 20px;
+  padding-bottom: 40px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  height: 150px;
 }
 .footer-inner {
   max-width: 960px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto;
   .links {
     justify-content: flex-end;
     .link {
@@ -141,7 +138,6 @@ export default ProductItem;
     .links {
       justify-content: center;
       .link {
-        margin-left: 10px;
         margin-left: 10px;
       }
     }

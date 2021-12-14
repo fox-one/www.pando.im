@@ -5,6 +5,7 @@ export const state = () => ({
     message: "",
     color: "info",
   },
+  pageBgColor: "white",
 });
 
 export const mutations = {
@@ -13,7 +14,16 @@ export const mutations = {
     state.snackbar.message = message;
     state.snackbar.color = color;
   },
+
   setSnackbar(state, val) {
     state.snackbar.show = val;
+  },
+
+  setPageBgColor(state, val) {
+    state.pageBgColor = val;
+  },
+
+  setDark(state, val) {
+    state.dark = val;
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :style="{ background: `${pageBgColor} !important` }">
     <!-- <f-app-bar app align="center" title=""></f-app-bar> -->
     <v-content>
       <nuxt />
@@ -19,7 +19,11 @@ import Footer from "@/components/Footer.vue";
     "global-footer": Footer,
   },
 })
-class DefaultLayout extends Vue {}
+class DefaultLayout extends Vue {
+  get pageBgColor() {
+    return this.$store.state.app.pageBgColor;
+  }
+}
 export default DefaultLayout;
 </script>
 

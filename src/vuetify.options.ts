@@ -5,11 +5,32 @@ import enUikit from "@foxone/uikit/src/locales/en";
 import jaUikit from "@foxone/uikit/src/locales/ja";
 import zhUikit from "@foxone/uikit/src/locales/zh-Hans";
 
+const icons = {
+  iconfont: "mdiSvg",
+  values: {
+    iconMetaTwitter: {
+      component: "icon-meta-twitter",
+    },
+    iconMetaTelegram: {
+      component: "icon-meta-telegram",
+    },
+    iconMetaDiscord: {
+      component: "icon-meta-discord",
+    },
+    iconMetaReddit: {
+      component: "icon-meta-reddit",
+    },
+    iconSnapshotTransfer: {
+      component: "icon-snapshot-transfer",
+    },
+  },
+};
+
 export default function ({ store }) {
   // const isDark = store.state.app?.dark || false;
 
   return {
-    icons: {},
+    icons,
     theme: {
       dark: false,
       options: {
@@ -19,6 +40,8 @@ export default function ({ store }) {
         light: {
           primary: "#000000",
           accent: "#ee4596",
+          fennec: "#FA7A4F",
+          darkmist: "#2D2D38",
           // greyscale
           greyscale_1: "#000000",
           greyscale_2: "#333333",
@@ -34,6 +57,8 @@ export default function ({ store }) {
         dark: {
           primary: "#ffffff",
           accent: "#f16aab",
+          fennec: "#FA7A4F",
+          darkmist: "#2D2D38",
           // greyscale
           greyscale_1: "#ffffff",
           greyscale_2: "#d2d3d3",

@@ -1,32 +1,80 @@
 <template>
   <section class="section" ref="section">
     <div class="section-inner" ref="inner" :style="style">
-      <div class="content d-flex">
-        <div class="left">
-          <div class="top mb-10">
+      <template v-if="layout === 'center'">
+        <div
+          class="content d-flex flex-column justify-center align-center"
+          :class="`layout-${layout}`"
+        >
+          <div class="top mb-2 text-center">
             <div :style="{ backgroundImage: `url(${logo})` }" class="logo" />
           </div>
-          <h1 class="section-title mb-5">{{ title }}</h1>
+
+          <h1 class="section-title text-center mb-5">{{ title }}</h1>
+
+          <div v-if="text" class="section-text text-center f-greyscale-3">
+            {{ text }}
+          </div>
+
           <div class="buttons">
             <a :href="primaryButton.url" class="button-wrapper">
-              <f-button class="button primary">{{
-                primaryButton.label
-              }}</f-button>
+              <f-button
+                class="button primary"
+                color="fennec"
+                :disabled="primaryButton.disabled"
+              >
+                <v-icon v-if="primaryButton.icon" size="16" class="mr-2">{{
+                  primaryButton.icon
+                }}</v-icon>
+                <span>{{ primaryButton.label }}</span>
+              </f-button>
             </a>
+
             <a :href="secondaryButton.url" class="button-wrapper">
-              <f-button class="button secondary" type="">{{
-                secondaryButton.label
-              }}</f-button>
+              <f-button class="button primary" color="darkmist">
+                <v-icon v-if="secondaryButton.icon" size="16" class="mr-2">{{
+                  secondaryButton.icon
+                }}</v-icon>
+                <span>{{ secondaryButton.label }}</span>
+              </f-button>
             </a>
           </div>
         </div>
-        <div class="right">
-          <div
-            :style="{ backgroundImage: `url(${picture})` }"
-            class="picture"
-          />
+      </template>
+
+      <template v-else>
+        <div class="content d-flex" :class="`layout-${layout}`">
+          <div class="left">
+            <div class="top mb-10">
+              <div :style="{ backgroundImage: `url(${logo})` }" class="logo" />
+            </div>
+
+            <h1 class="section-title mb-5">{{ title }}</h1>
+
+            <div v-if="text" class="section-text mb-5">{{ text }}</div>
+
+            <div class="buttons">
+              <a :href="primaryButton.url" class="button-wrapper">
+                <f-button class="button primary">{{
+                  primaryButton.label
+                }}</f-button>
+              </a>
+              <a :href="secondaryButton.url" class="button-wrapper">
+                <f-button class="button secondary" type="">{{
+                  secondaryButton.label
+                }}</f-button>
+              </a>
+            </div>
+          </div>
+
+          <div v-if="picture" class="right">
+            <div
+              :style="{ backgroundImage: `url(${picture})` }"
+              class="picture"
+            />
+          </div>
         </div>
-      </div>
+      </template>
     </div>
   </section>
 </template>
@@ -37,6 +85,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 @Component
 class FeaturedHeader extends Vue {
   @Prop({ default: "" }) title!: string;
+  @Prop({ default: "" }) text!: string;
   @Prop({ default: "" }) name!: string;
   @Prop({ default: "" }) logo!: string;
   @Prop({ default: "" }) picture!: string;
@@ -44,6 +93,7 @@ class FeaturedHeader extends Vue {
   @Prop({ default: "" }) bgColor!: string;
   @Prop({ default: null }) primaryButton!: any;
   @Prop({ default: null }) secondaryButton!: any;
+  @Prop({ default: "left" }) layout!: string;
 
   mounted() {
     setTimeout(() => {
@@ -55,7 +105,7 @@ class FeaturedHeader extends Vue {
 
   get style() {
     return {
-      "background-color": this.bgColor,
+      "background-color": this.bgColor || "transparent",
     };
   }
 }
@@ -87,17 +137,21 @@ export default FeaturedHeader;
     width: 100%;
   }
 }
-.left {
+.content {
   flex: 1;
   .logo {
     height: 40px;
     display: inline-block;
     background-size: contain;
     width: 100%;
+    min-width: 200px;
     background-position: left center;
   }
   .section-title {
     font-size: 32px;
+  }
+  .section-text {
+    margin-bottom: 40px;
   }
   .buttons {
     margin-bottom: 20px;
@@ -116,6 +170,7 @@ export default FeaturedHeader;
     .secondary {
       color: #000 !important;
       background-color: #fff !important;
+      box-shadow: 0;
     }
   }
 }
@@ -126,17 +181,27 @@ export default FeaturedHeader;
     background-size: cover;
   }
 }
+.content.layout-center {
+  .logo {
+    height: 77px;
+    min-width: 300px;
+  }
+}
 @media only screen and (max-width: 600px) {
   .section-inner {
     .content {
       flex-direction: column;
     }
   }
-  .left {
+  .content {
     padding: 0 20px;
     .logo {
       background-position: center;
     }
+    .section-text {
+      margin-bottom: 20px;
+    }
+
     .buttons {
       display: flex;
       padding: 20px;
@@ -148,6 +213,12 @@ export default FeaturedHeader;
           width: 100%;
         }
       }
+    }
+  }
+  .content.layout-center {
+    .logo {
+      height: 32px;
+      min-width: 120px;
     }
   }
   .right {

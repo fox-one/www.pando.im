@@ -24,6 +24,19 @@ export function isMobile() {
   return false;
 }
 
+// browser detection
+export function getBrowserName() {
+  if (
+    navigator.userAgent.indexOf("Chrome") !== -1 ||
+    navigator.userAgent.indexOf("Chromium") !== -1
+  ) {
+    return "chrome";
+  } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
+    return "firefox";
+  }
+  return "other";
+}
+
 export function getLocale() {
   const lang = navigator.language.toLowerCase();
   const supportedLocales = ["en", "ja", "zh", "ko", "de", "fr", "es"];
