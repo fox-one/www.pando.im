@@ -19,16 +19,18 @@
             </v-btn>
           </div>
           <v-list>
-            <v-list-item v-for="(item, ix) in navItems" :key="`nav-item-${ix}`">
+            <v-list-item
+              v-for="(item, ix) in navItems"
+              :key="`nav-item-${ix}`"
+              @click="goto(item)"
+            >
               <v-list-item-icon>
                 <v-avatar size="32"><v-img :src="item.icon" /></v-avatar>
               </v-list-item-icon>
               <v-list-item-content>
-                <nuxt-link :to="item.route">
-                  <span class="title">
-                    {{ item.label }}
-                  </span>
-                </nuxt-link>
+                <span class="title">
+                  {{ item.label }}
+                </span>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -90,6 +92,10 @@ class AppNav extends Vue {
         route: "/fennec",
       },
     ];
+  }
+  goto(item) {
+    this.dialog = false;
+    this.$router.push(item.route);
   }
 }
 export default AppNav;
