@@ -10,5 +10,12 @@
     "url": "https://app.mixswap.exchange/",
     "title": "MixSwap",
     "text": "MixSwap is the MiFi DEX aggregation trading platform of Exin."
+  },
+  {
+    "name": "leafer",
+    "url": "https://leafer.one",
+    "title": "Leafer",
+    "text": "Leafer is a notification service built for Pando Leaf users."
   }
 ]
+
