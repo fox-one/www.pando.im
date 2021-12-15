@@ -59,7 +59,7 @@
                   primaryButton.label
                 }}</f-button>
               </a>
-              <a :href="secondaryButton.url" class="button-wrapper">
+              <a :href="secondaryButton.url" class="button-wrapper secondary">
                 <f-button class="button secondary" type="">{{
                   secondaryButton.label
                 }}</f-button>
@@ -170,7 +170,7 @@ export default FeaturedHeader;
     .secondary {
       color: #000 !important;
       background-color: #fff !important;
-      box-shadow: 0;
+      box-shadow: 0 !important;
     }
   }
 }
@@ -184,7 +184,7 @@ export default FeaturedHeader;
 .content.layout-center {
   .logo {
     height: 77px;
-    min-width: 300px;
+    width: 300px;
   }
 }
 @media only screen and (max-width: 600px) {

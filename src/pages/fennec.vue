@@ -76,16 +76,16 @@ class FennecPage extends Mixins(mixins.page) {
   get slideItems() {
     return [
       {
-        label: "Collect Assets",
+        label: this.$t("product.fennec.slide_item_label_1"),
         image: require("~/assets/images/products/fennec-hlight-1.png"),
       },
       {
-        label: "Send & Receive",
-        image: require("~/assets/images/products/fennec-hlight-1.png"),
+        label: this.$t("product.fennec.slide_item_label_2"),
+        image: require("~/assets/images/products/fennec-hlight-2.png"),
       },
       {
-        label: "Swap Tokens",
-        image: require("~/assets/images/products/fennec-hlight-1.png"),
+        label: this.$t("product.fennec.slide_item_label_3"),
+        image: require("~/assets/images/products/fennec-hlight-3.png"),
       },
     ];
   }

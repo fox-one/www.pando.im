@@ -98,6 +98,7 @@ export default HlightSection;
     }
   }
   .left {
+    flex: 0;
     padding: 40px 0;
     .image {
       max-height: 500px;

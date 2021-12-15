@@ -12,6 +12,19 @@ export const fennecInstallURLs = {
   raw: "https://github.com/fox-one/fennec/releases",
 };
 
+export const supportedWallets = [
+  {
+    name: "mm",
+    label: "Mixin Messenger",
+    url: "https://mixin.one/messenger",
+  },
+  {
+    name: "fennec",
+    label: "Fennec",
+    route: "/fennec",
+  },
+];
+
 export const mtgMembers = [
   {
     name: "fox",

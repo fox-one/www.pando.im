@@ -18,7 +18,10 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 class IconMetaTwitter extends Vue {
-  isDark = this.$vuetify.theme.dark;
+  get isDark() {
+    return this.$store.state.app.dark;
+  }
+
   get colors() {
     return ["rgba(255,255,255,1)", "rgba(0,0,0,1)"];
   }

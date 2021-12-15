@@ -22,6 +22,8 @@
     </div>
 
     <dev-section />
+
+    <wallet-section />
   </div>
 </template>
 
@@ -29,12 +31,14 @@
 import { Component, Mixins } from "vue-property-decorator";
 import ProductItem from "@/components/ProductItem.vue";
 import DevSection from "@/components/sections/DevSection.vue";
+import WalletSection from "@/components/sections/WalletSection.vue";
 import mixins from "@/mixins";
 
 @Component({
   components: {
     ProductItem,
     DevSection,
+    WalletSection,
   },
 })
 class IndexPage extends Mixins(mixins.page) {

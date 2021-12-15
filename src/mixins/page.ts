@@ -61,10 +61,11 @@ export default class PageView extends Vue {
       this.setPageBgColor(this.pageBgColor);
     }
 
-    if (this.isDark) {
+    setTimeout(() => {
+      console.log(this.isDark);
       (this as any).$vuetify.theme.dark = this.isDark;
       this.setDark(this.isDark);
-    }
+    }, 100);
 
     // this.setAppbar({ title: this.title, ...this.appbar });
 

@@ -88,12 +88,20 @@
   "product.fennec.launch_label_firefox": "Add to Firefox",
   "product.fennec.launch_label_chrome": "Add to Chrome",
   "product.fennec.not_support_mobile": "Only support on desktop",
+  "product.fennec.slide_item_label_1": "Collect Assets",
+  "product.fennec.slide_item_label_2": "Send & Receive",
+  "product.fennec.slide_item_label_3": "Swap Tokens",
 
   "product.root.title": "Pando Root",
   "product.root.subtitle": "The mystery project, coming soon.",
 
   "dev.title": "It is easy to develop dApps based on Pando",
   "dev.text": "Pando provides a set of developer-friendly APIs and SDK for third-party developers to build applications",
+
+  "wallet.mm": "Mixin Messenger",
+  "wallet.fennec": "Fennec",
+  "wallet.title": "Supported wallets",
+  "wallet.text": "Pando series products support all Mixin network compatible wallets",
 
   "footer.documents": "Documents",
   "footer.documents.title": "Pando's documents for users and developers",
