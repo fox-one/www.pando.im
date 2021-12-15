@@ -96,11 +96,11 @@ class FeaturedHeader extends Vue {
   @Prop({ default: "left" }) layout!: string;
 
   mounted() {
-    setTimeout(() => {
+    Vue.nextTick(() => {
       const section = this.$refs.section as any;
       const inner = this.$refs.inner as any;
       section.style.height = inner.offsetHeight + "px";
-    }, 100);
+    });
   }
 
   get style() {
