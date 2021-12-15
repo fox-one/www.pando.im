@@ -13,5 +13,5 @@ If you are interested in submitting your own Pando-based application, please fol
 
 1. create a folder named `your-app-name` in this directory
 2. put you the icon and screenshot in the folder and name them as `icon.png` and `image.png`
-3. edit the `index.json` file, append your app's information at the end of the file
+3. edit the `index.json` file, append your app's information at the end of the file. Please note that the `name` field should be lowercase and the `url` field should be a valid URL.
 4. create a PR to submit your changes
