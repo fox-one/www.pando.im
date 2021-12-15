@@ -71,22 +71,22 @@ class AppNav extends Vue {
     return [
       {
         icon: require("~/assets/images/products/lake.png"),
-        label: "Lake & 4swap",
+        label: this.$t("product.lake.title_short_both"),
         route: "/lake",
       },
       {
         icon: require("~/assets/images/products/leaf.png"),
-        label: "Leaf",
+        label: this.$t("product.leaf.title_short"),
         route: "/leaf",
       },
       {
         icon: require("~/assets/images/products/rings.png"),
-        label: "Rings",
+        label: this.$t("product.rings.title_short"),
         route: "/rings",
       },
       {
         icon: require("~/assets/images/wallets/fennec.png"),
-        label: "Fennec",
+        label: this.$t("product.fennec.title"),
         route: "/fennec",
       },
     ];

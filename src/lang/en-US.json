@@ -18,8 +18,8 @@
   "product.lake.title": "Pando Lake",
   "product.lake.title_4swap": "4swap",
   "product.lake.title_both": "Pando Lake & 4swap",
+  "product.lake.title_short_both": "Lake & 4swap",
   "product.lake.subtitle": "A fully decentralized protocol for automated liquidity provision.",
-
   "product.lake.hlight": "You can swap and earn at Pando Lake or 4swap.",
   "product.lake.hlight_text1": "<strong>Pando Lake</strong> only allow for selected pools that have strong community based and proven credential.",
   "product.lake.hlight_text2": "<strong>4swap</strong> is totally driven by the community, anyone can join the community and send request to list new pools.",
@@ -30,11 +30,11 @@
   "product.lake.feat_text_2": "Trades will be confirmed in seconds",
   "product.lake.feat_text_3": "Supports all mainstream blockchains",
   "product.lake.mtg_text": "<strong>Lake & 4swap</strong> is built with Mixin Trusted Group. At present, there are 5 genesis nodes who serve the trades.",
-
   "product.lake.launch_label": "Swap coins",
   "product.lake.help_label": "Learn more",
 
   "product.leaf.title": "Pando Leaf",
+  "product.leaf.title_short": "Leaf",
   "product.leaf.subtitle": "A decentralized financial network, implement a derivatives liquidity protocol.",
   "product.leaf.hlight": "Deposit collateral to generate pUSD in Pando Leaf",
   "product.leaf.hlight_text1": "<strong>Pando USD</strong> is considered a stablecoin pegged to the US Dollar",
@@ -60,6 +60,7 @@
   "product.leaf.table_val_decentralized": "Decentralized?",
 
   "product.rings.title": "Pando Rings",
+  "product.rings.title_short": "Rings",
   "product.rings.subtitle": "An algorithmic, autonomous interest rate protocol.",
   "product.rings.hlight": "A place where you can lend or borrow cryptocurrencies",
   "product.rings.hlight_text1": "<strong>Pando Rings</strong> lets users deposit cryptocurrencies and earn interest, or borrow other cryptoassets against them.",
