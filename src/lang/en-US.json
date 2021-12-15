@@ -103,6 +103,11 @@
   "wallet.title": "Supported wallets",
   "wallet.text": "Pando series products support all Mixin network compatible wallets",
 
+  "3rd_party_apps.title": "Pando 3rd-party Applications",
+  "3rd_party_apps.text": "Pando provides a set of developer-friendly APIs and SDK for third-party developers to build applications",
+  "3rd_party_apps.launch_label": "Add your applications",
+  "3rd_party_apps.docs": "Documents",
+
   "footer.documents": "Documents",
   "footer.documents.title": "Pando's documents for users and developers",
   "footer.blog": "Blog",

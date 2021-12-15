@@ -20,7 +20,7 @@
             <a :href="primaryButton.url" class="button-wrapper">
               <f-button
                 class="button primary"
-                color="fennec"
+                :color="primaryButton.color || 'primary'"
                 :disabled="primaryButton.disabled"
                 x-large
               >
@@ -32,7 +32,12 @@
             </a>
 
             <a :href="secondaryButton.url" class="button-wrapper">
-              <f-button color="darkmist" dark x-large class="button">
+              <f-button
+                :color="secondaryButton.color || 'secondary'"
+                dark
+                x-large
+                class="button"
+              >
                 <v-icon v-if="secondaryButton.icon" size="16" class="mr-2">{{
                   secondaryButton.icon
                 }}</v-icon>
@@ -92,6 +97,7 @@ class FeaturedHeader extends Vue {
   @Prop({ default: "" }) picture!: string;
   @Prop({ default: "" }) color!: string;
   @Prop({ default: "" }) bgColor!: string;
+  @Prop({ default: "" }) bgImage!: string;
   @Prop({ default: null }) primaryButton!: any;
   @Prop({ default: null }) secondaryButton!: any;
   @Prop({ default: "left" }) layout!: string;
@@ -107,6 +113,7 @@ class FeaturedHeader extends Vue {
   get style() {
     return {
       "background-color": this.bgColor || "transparent",
+      "background-image": `url(${this.bgImage})` || "none",
     };
   }
 }
@@ -149,7 +156,7 @@ export default FeaturedHeader;
     background-position: left center;
   }
   .section-title {
-    font-size: 32px;
+    font-size: 38px;
   }
   .section-text {
     margin-bottom: 40px;
@@ -198,6 +205,9 @@ export default FeaturedHeader;
     padding: 0 20px;
     .logo {
       background-position: center;
+    }
+    .section-title {
+      font-size: 32px;
     }
     .section-text {
       margin-bottom: 20px;

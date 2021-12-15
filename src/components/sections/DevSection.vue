@@ -1,22 +1,20 @@
 <template>
   <section class="section mb-10" ref="section">
+    <div class="bg-image" />
     <div class="section-inner" ref="inner">
       <h3 class="section-title mb-5">{{ $t("dev.title") }}</h3>
       <div class="mb-5 f-greyscale-3 px-5">
         {{ $t("dev.text") }}
       </div>
       <div class="buttons mt-4 d-flex">
-        <a href="https://docs.pando.im/developer/intro" class="button-wrapper">
+        <nuxt-link to="/3rd-party-apps" class="button-wrapper">
           <f-button color="primary" x-large class="button">{{
-            $t("learn_more")
-          }}</f-button>
-        </a>
-        <a
-          href="https://docs.pando.im/docs/apps/3rd-party"
-          class="button-wrapper"
-        >
-          <f-button color="secondary" x-large class="button">{{
             $t("showcases")
+          }}</f-button>
+        </nuxt-link>
+        <a href="https://docs.pando.im/developer/intro" class="button-wrapper">
+          <f-button color="secondary" x-large class="button">{{
+            $t("learn_more")
           }}</f-button>
         </a>
       </div>
@@ -37,12 +35,21 @@ export default DevSection;
   max-width: 960px;
   padding-top: 0;
   padding-bottom: 0;
+  position: relative;
 }
-
-.section-inner {
+.bg-image {
   background: transparent url(~/assets/images/dev-bg.png) no-repeat center
     center;
   background-size: cover;
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  display: block;
+  content: " ";
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section-inner {
   padding: 72px 0;
   margin: 0;
   min-height: 100px;

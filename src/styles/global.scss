@@ -22,6 +22,11 @@
   }
 }
 
+.button,
+.v-btn {
+  text-transform: capitalize !important;
+}
+
 @media only screen and (max-width: 600px) {
   .section {
     padding-top: 32px;
