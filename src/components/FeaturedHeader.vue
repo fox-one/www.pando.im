@@ -22,6 +22,7 @@
                 class="button primary"
                 color="fennec"
                 :disabled="primaryButton.disabled"
+                x-large
               >
                 <v-icon v-if="primaryButton.icon" size="16" class="mr-2">{{
                   primaryButton.icon
@@ -31,7 +32,7 @@
             </a>
 
             <a :href="secondaryButton.url" class="button-wrapper">
-              <f-button class="button primary" color="darkmist">
+              <f-button color="darkmist" dark x-large class="button">
                 <v-icon v-if="secondaryButton.icon" size="16" class="mr-2">{{
                   secondaryButton.icon
                 }}</v-icon>
@@ -55,12 +56,12 @@
 
             <div class="buttons">
               <a :href="primaryButton.url" class="button-wrapper">
-                <f-button class="button primary">{{
+                <f-button class="button primary" color="primary" x-large>{{
                   primaryButton.label
                 }}</f-button>
               </a>
-              <a :href="secondaryButton.url" class="button-wrapper secondary">
-                <f-button class="button secondary" type="">{{
+              <a :href="secondaryButton.url" class="button-wrapper">
+                <f-button class="button secondary" color="secondray" x-large>{{
                   secondaryButton.label
                 }}</f-button>
               </a>

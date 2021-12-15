@@ -26,6 +26,11 @@ const config: NuxtConfig = {
         content:
           "A decentralized financial network built with the MTG that includes a series of open financial protocols.",
       },
+      {
+        hid: "color-scheme",
+        name: "color-scheme",
+        content: "light only",
+      },
     ],
     link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
   },

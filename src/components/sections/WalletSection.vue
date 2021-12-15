@@ -17,10 +17,10 @@
             >
               <img :src="wallet.icon" class="icon mb-4" />
               <nuxt-link v-if="wallet.route" :to="wallet.route">
-                <f-button>{{ wallet.label }}</f-button>
+                <f-button color="primary" x-large>{{ wallet.label }}</f-button>
               </nuxt-link>
               <a v-else :href="wallet.url" :title="wallet.label">
-                <f-button>{{ wallet.label }}</f-button>
+                <f-button color="primary" x-large>{{ wallet.label }}</f-button>
               </a>
             </v-col>
           </v-row>

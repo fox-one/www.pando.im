@@ -7,13 +7,17 @@
       </div>
       <div class="buttons mt-4 d-flex">
         <a href="https://docs.pando.im/developer/intro" class="button-wrapper">
-          <f-button class="button">{{ $t("learn_more") }}</f-button>
+          <f-button color="primary" x-large class="button">{{
+            $t("learn_more")
+          }}</f-button>
         </a>
         <a
           href="https://docs.pando.im/docs/apps/3rd-party"
           class="button-wrapper"
         >
-          <f-button class="button secondary">{{ $t("showcases") }}</f-button>
+          <f-button color="secondary" x-large class="button">{{
+            $t("showcases")
+          }}</f-button>
         </a>
       </div>
     </div>

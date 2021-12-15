@@ -43,6 +43,8 @@
               v-if="product.launch_label"
               class="product-button d-flex align-center"
               target="_blank"
+              color="primary"
+              x-large
             >
               {{ product.launch_label }}
             </f-button>
