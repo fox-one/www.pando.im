@@ -7,7 +7,9 @@ export default function (http: Http) {
     },
 
     getApps() {
-      return http.get("/3rd-party-apps/index.json?r=" + Math.random.toString());
+      return http.get(
+        "/3rd-party-apps-info/index.json?r=" + Math.random().toString(),
+      );
     },
   };
 }

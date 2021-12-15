@@ -19,12 +19,12 @@
           v-for="(app, ix) in apps"
           :key="`app-${ix}`"
         >
-          <a :href="app.url" :title="app.title">
+          <a :href="app.url" :title="app.title" target="_blank">
             <f-panel class="app" elevation="high">
               <div
                 class="app-screenshot mb-4"
                 :style="{
-                  'background-image': `url(/3rd-party-apps/${app.name}/image.png)`,
+                  'background-image': `url(/3rd-party-apps-info/${app.name}/image.png)`,
                 }"
               ></div>
               <div class="app-top mb-4">
@@ -32,7 +32,7 @@
                   ><v-img
                     width="24"
                     hidden="24"
-                    :src="`/3rd-party-apps/${app.name}/icon.png`"
+                    :src="`/3rd-party-apps-info/${app.name}/icon.png`"
                 /></v-avatar>
                 <span class="subtitle-1 font-weight-bold">{{ app.title }}</span>
               </div>
@@ -54,7 +54,6 @@ import HlightSection from "@/components/sections/HlightSection.vue";
 import FeatureListSection from "@/components/sections/FeatureListSection.vue";
 import MtgSection from "@/components/sections/MtgSection.vue";
 import mixins from "@/mixins";
-// import thrdApps from "@/static/3rd-party-apps/index.json";
 
 @Component({
   components: {
@@ -76,7 +75,7 @@ class LakePage extends Mixins(mixins.page) {
         icon: this.$icons.mdiPlus,
         label: this.$t("3rd_party_apps.launch_label"),
         url:
-          "https://github.com/fox-one/www.pando.im/tree/master/src/static/3rd-party-apps/",
+          "https://github.com/fox-one/www.pando.im/tree/master/src/static/3rd-party-apps-info/",
       },
       {
         label: this.$t("3rd_party_apps.docs"),
