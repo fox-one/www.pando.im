@@ -54,7 +54,7 @@ import HlightSection from "@/components/sections/HlightSection.vue";
 import FeatureListSection from "@/components/sections/FeatureListSection.vue";
 import MtgSection from "@/components/sections/MtgSection.vue";
 import mixins from "@/mixins";
-import thrdApps from "@/static/3rd-party-apps/index.json";
+// import thrdApps from "@/static/3rd-party-apps/index.json";
 
 @Component({
   components: {
@@ -65,6 +65,7 @@ import thrdApps from "@/static/3rd-party-apps/index.json";
   },
 })
 class LakePage extends Mixins(mixins.page) {
+  thrdApps = [];
   get title() {
     return this.$t("3rd_party_apps.title") as string;
   }
@@ -85,7 +86,11 @@ class LakePage extends Mixins(mixins.page) {
   }
 
   get apps() {
-    return thrdApps;
+    return this.thrdApps;
+  }
+
+  async mounted() {
+    this.thrdApps = await this.$apis.getApps();
   }
 }
 export default LakePage;
