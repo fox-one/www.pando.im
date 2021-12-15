@@ -53,13 +53,11 @@ import FeaturedHeader from "@/components/FeaturedHeader.vue";
 import HlightSection from "@/components/sections/HlightSection.vue";
 import FeatureListSection from "@/components/sections/FeatureListSection.vue";
 import MtgSection from "@/components/sections/MtgSection.vue";
-import Navbar from "@/components/Navbar.vue";
 import mixins from "@/mixins";
 import thrdApps from "@/static/3rd-party-apps/index.json";
 
 @Component({
   components: {
-    Navbar,
     FeaturedHeader,
     HlightSection,
     FeatureListSection,

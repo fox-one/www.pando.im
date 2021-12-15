@@ -17,8 +17,8 @@ const icons = {
     iconMetaReddit: {
       component: "icon-meta-reddit",
     },
-    iconSnapshotTransfer: {
-      component: "icon-snapshot-transfer",
+    iconMenu: {
+      component: "icon-menu",
     },
   },
 };

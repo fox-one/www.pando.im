@@ -1,6 +1,6 @@
 <template>
   <v-app :style="{ background: `${pageBgColor} !important` }">
-    <!-- <f-app-bar app align="center" title=""></f-app-bar> -->
+    <app-nav />
     <v-content>
       <nuxt />
     </v-content>
@@ -12,11 +12,13 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Footer from "@/components/Footer.vue";
+import AppNav from "@/components/AppNav.vue";
 
 @Component({
   middleware: "i18n",
   components: {
     "global-footer": Footer,
+    AppNav,
   },
 })
 class DefaultLayout extends Vue {

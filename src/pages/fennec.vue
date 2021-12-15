@@ -28,13 +28,11 @@ import { Component, Mixins } from "vue-property-decorator";
 import FeaturedHeader from "@/components/FeaturedHeader.vue";
 import HlightSlideSection from "@/components/sections/HlightSlideSection.vue";
 import FeatureGridSection from "@/components/sections/FeatureGridSection.vue";
-import Navbar from "@/components/Navbar.vue";
 import mixins from "@/mixins";
 import { fennecInstallURLs, mtgMembers } from "~/constants";
 
 @Component({
   components: {
-    Navbar,
     FeaturedHeader,
     HlightSlideSection,
     FeatureGridSection,
