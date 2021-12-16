@@ -2,7 +2,7 @@
   <section class="section" ref="section">
     <div class="section-inner" ref="inner">
       <h3 class="section-title mb-5">{{ title }}</h3>
-      <div class="mb-5 f-greyscale-3 px-5" v-html="text"></div>
+      <div class="body-2 mb-5 greyscale_3--text px-5" v-html="text"></div>
 
       <div class="dummy-members-wrapper">
         <div class="members dummy-members">
@@ -22,15 +22,15 @@
           @click="visit(mem)"
         >
           <template v-if="mem.dummy">
-            <div class="f-body-2 f-greyscale-3">More MTG members...</div>
+            <div class="body-2 greyscale_3--text">More MTG members...</div>
           </template>
           <template v-else>
             <img
               class="external-link-icon"
               :src="require('~/assets/images/external-link.svg')"
             />
-            <img class="icon" :src="mem.icon" />
-            <div class="f-title-2 mb-2">
+            <img class="icon mb-2" :src="mem.icon" />
+            <div class="body-2 font-weight-bold mb-2">
               <template v-if="mem.url">
                 <a
                   :href="mem.url"
@@ -44,7 +44,7 @@
                 {{ mem.title }}
               </template>
             </div>
-            <div class="f-body-2 f-greyscale-3">
+            <div class="body-2 greyscale_3--text">
               {{ mem.text }}
             </div>
           </template>
@@ -121,6 +121,10 @@ export default MtgSection;
   flex-direction: column;
   justify-content: center;
 
+  .section-title {
+    font-size: 32px;
+  }
+
   .members {
     display: flex;
     flex-wrap: wrap;
@@ -134,7 +138,7 @@ export default MtgSection;
       background: #fff;
       border-radius: 8px;
       position: relative;
-      padding: 24px 16px;
+      padding: 32px 16px;
       .icon {
         width: 44px;
         height: 44px;
@@ -191,12 +195,17 @@ export default MtgSection;
     }
     .mask.invert {
       transform: rotate(180deg);
+      top: 3px;
     }
   }
 }
 @media only screen and (max-width: 600px) {
   .section-inner {
     padding: 40px 0;
+    .section-title {
+      font-size: 24px;
+    }
+
     .members {
       flex-direction: column;
       align-items: center;

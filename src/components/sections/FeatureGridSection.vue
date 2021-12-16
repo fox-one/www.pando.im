@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <v-container class="section">
     <div class="section-inner d-flex">
       <div class="content d-flex">
         <h3 v-if="title" class="section-title mb-5">{{ title }}</h3>
@@ -15,8 +15,10 @@
             >
               <img :src="feat.icon" class="icon mb-4" />
               <div class="feat-content">
-                <h4 class="feat-title f-title-2">{{ feat.title }}</h4>
-                <div class="feat-text f-body-1 f-greyscale-3">
+                <h4 class="feat-title title font-weight-bold">
+                  {{ feat.title }}
+                </h4>
+                <div class="feat-text body-2 greyscale_3--text">
                   {{ feat.text }}
                 </div>
               </div>
@@ -25,7 +27,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -43,7 +45,7 @@ export default FeatureListSection;
 <style lang="scss" scoped>
 .section-inner {
   flex-wrap: wrap;
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto;
   justify-content: space-between;
   flex-direction: column;

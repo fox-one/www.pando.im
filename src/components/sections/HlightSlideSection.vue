@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <v-container class="section">
     <div class="section-inner d-flex">
       <div class="left">
         <v-carousel
@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -71,8 +71,8 @@ export default HlightSection;
 <style lang="scss" scoped>
 .section-inner {
   flex-wrap: wrap;
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 1280px;
+  margin: 72px auto;
   justify-content: space-between;
   background: linear-gradient(180deg, #473859 0%, #393453 100%);
   box-shadow: inset 0px -1px 0px #29253e, inset 0px 1px 0px #625375;

@@ -48,3 +48,24 @@ export function getLocale() {
   }
   return "en";
 }
+
+export function displayUsd(number: string) {
+  let floatNum = parseFloat(number);
+  let suffix = "";
+  if (floatNum > 1000000) {
+    floatNum = floatNum / 1000000;
+    suffix = "M";
+  } else if (floatNum > 1000) {
+    floatNum = floatNum / 1000;
+    suffix = "K";
+  }
+
+  if (Intl && Intl.NumberFormat) {
+    const formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+    return formatter.format(floatNum) + suffix;
+  }
+  return floatNum.toFixed(0) + suffix;
+}

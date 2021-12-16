@@ -19,16 +19,42 @@
             </v-btn>
           </div>
           <v-list>
+            <v-list-item @click="goto('/')">
+              <v-list-item-icon>
+                <v-avatar size="32"
+                  ><v-img :src="require('~/static/favicon.png')"
+                /></v-avatar>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <span
+                  class="title"
+                  :class="
+                    currentRouteName === 'home'
+                      ? 'greyscale_1--text'
+                      : 'greyscale_3--text'
+                  "
+                  >{{ $t("home") }}</span
+                >
+              </v-list-item-content>
+            </v-list-item>
+
             <v-list-item
               v-for="(item, ix) in navItems"
               :key="`nav-item-${ix}`"
-              @click="goto(item)"
+              @click="goto(item.route)"
             >
               <v-list-item-icon>
                 <v-avatar size="32"><v-img :src="item.icon" /></v-avatar>
               </v-list-item-icon>
               <v-list-item-content>
-                <span class="title">
+                <span
+                  class="title"
+                  :class="
+                    currentRouteName === item.name
+                      ? 'greyscale_1--text'
+                      : 'greyscale_3--text'
+                  "
+                >
                   {{ item.label }}
                 </span>
               </v-list-item-content>
@@ -51,16 +77,23 @@
         :key="`nav-item-${ix}`"
         :to="item.route"
       >
-        <v-btn text depressed :ripple="false" class="greyscale_3--text">
+        <span
+          class="body-2 font-weight-bold mx-4 greyscale_3--text"
+          :class="
+            currentRouteName === item.name
+              ? 'greyscale_1--text'
+              : 'greyscale_4--text'
+          "
+        >
           {{ item.label }}
-        </v-btn>
+        </span>
       </nuxt-link>
     </div>
   </f-app-bar>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 @Component
 class AppNav extends Vue {
@@ -69,33 +102,46 @@ class AppNav extends Vue {
   get color() {
     return this.$store.state.app.pageBgColor || "white";
   }
+
   get navItems() {
     return [
       {
+        name: "lake",
         icon: require("~/assets/images/products/lake.png"),
         label: this.$t("product.lake.title_short_both"),
         route: "/lake",
       },
       {
+        name: "leaf",
         icon: require("~/assets/images/products/leaf.png"),
         label: this.$t("product.leaf.title_short"),
         route: "/leaf",
       },
       {
+        name: "rings",
         icon: require("~/assets/images/products/rings.png"),
         label: this.$t("product.rings.title_short"),
         route: "/rings",
       },
       {
+        name: "fennec",
         icon: require("~/assets/images/wallets/fennec.png"),
         label: this.$t("product.fennec.title"),
         route: "/fennec",
       },
     ];
   }
-  goto(item) {
+
+  get currentRouteName() {
+    if (this.$route.name === "index") {
+      return "home";
+    }
+    return this.$route.name;
+  }
+
+  goto(route) {
     this.dialog = false;
-    this.$router.push(item.route);
+    this.$router.push(route);
   }
 }
 export default AppNav;

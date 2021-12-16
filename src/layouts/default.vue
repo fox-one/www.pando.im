@@ -1,9 +1,9 @@
 <template>
   <v-app :style="{ background: `${pageBgColor} !important` }">
     <app-nav />
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
     <toast />
     <global-footer />
   </v-app>

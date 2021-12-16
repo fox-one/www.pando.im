@@ -6,6 +6,7 @@
       :style="productStyles"
       @mouseover="mouseover"
       @mouseleave="mouseleave"
+      @click="goto(product)"
     >
       <div class="product-content">
         <div class="product-icon mb-3">
@@ -24,33 +25,31 @@
             class="product-icon-image product-icon-image-hover"
           />
         </div>
+
         <h3 class="product-title mb-2">{{ product.title }}</h3>
+
         <div class="product-subtitle mb-3">{{ product.subtitle }}</div>
-        <a
-          v-if="product.help_label"
-          :href="product.help_url"
-          class="product-help-link d-flex align-center"
-          target="_blank"
-        >
-          {{ product.help_label }}
-          <v-icon :size="16" color="black" class="product-button-icon ml-1">{{
-            $icons.mdiArrowRight
-          }}</v-icon>
-        </a>
+
         <div v-if="product.route" class="product-buttons">
           <nuxt-link :to="product.route">
-            <f-button
-              v-if="product.launch_label"
-              class="product-button d-flex align-center"
+            <a
+              v-if="product.help_label"
+              :href="product.help_url"
+              class="product-help-link d-flex align-center"
               target="_blank"
-              color="primary"
-              x-large
             >
-              {{ product.launch_label }}
-            </f-button>
+              {{ product.help_label }}
+              <v-icon
+                :size="16"
+                color="black"
+                class="product-button-icon ml-1"
+                >{{ $icons.mdiArrowRight }}</v-icon
+              >
+            </a>
           </nuxt-link>
         </div>
       </div>
+
       <div class="product-screenshot">
         <v-img
           class="product-screenshot-image"
@@ -111,6 +110,12 @@ class ProductItem extends Vue {
       });
     }
   }
+
+  goto(item) {
+    if (item.route) {
+      this.$router.push(item.route);
+    }
+  }
 }
 export default ProductItem;
 </script>
@@ -122,8 +127,7 @@ export default ProductItem;
   padding: 4px;
 }
 .product.no-ani {
-  .product.no-ani {
-  }
+  cursor: default;
   .product-screenshot-image {
     transform: rotateZ(5deg) !important;
   }
@@ -139,7 +143,7 @@ export default ProductItem;
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
 
   .product-icon-image {
     display: block;

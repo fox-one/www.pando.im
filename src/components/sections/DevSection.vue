@@ -1,5 +1,5 @@
 <template>
-  <section class="section mb-10" ref="section">
+  <section class="section" ref="section">
     <div class="bg-image" />
     <div class="section-inner" ref="inner">
       <h3 class="section-title mb-5">{{ $t("dev.title") }}</h3>
@@ -8,14 +8,24 @@
       </div>
       <div class="buttons mt-4 d-flex">
         <nuxt-link to="/3rd-party-apps" class="button-wrapper">
-          <f-button color="primary" x-large class="button">{{
-            $t("showcases")
-          }}</f-button>
+          <f-button color="primary" x-large class="button">
+            <v-img
+              max-width="16"
+              height="16"
+              :src="require('~/assets/images/button-icons/play.svg')"
+            />
+            <span class="ml-1">{{ $t("showcases") }} </span>
+          </f-button>
         </nuxt-link>
         <a href="https://docs.pando.im/developer/intro" class="button-wrapper">
-          <f-button color="secondary" x-large class="button">{{
-            $t("learn_more")
-          }}</f-button>
+          <f-button color="secondary" x-large class="button">
+            <v-img
+              max-width="16"
+              height="16"
+              :src="require('~/assets/images/button-icons/docs.svg')"
+            />
+            <span class="ml-1">{{ $t("learn_more") }}</span>
+          </f-button>
         </a>
       </div>
     </div>
@@ -23,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 @Component
 class DevSection extends Vue {}
@@ -32,7 +42,7 @@ export default DevSection;
 
 <style lang="scss" scoped>
 .section {
-  max-width: 960px;
+  max-width: 1280px;
   padding-top: 0;
   padding-bottom: 0;
   position: relative;
@@ -48,9 +58,10 @@ export default DevSection;
   content: " ";
   left: 50%;
   transform: translateX(-50%);
+  z-index: 0;
 }
 .section-inner {
-  padding: 72px 0;
+  padding: 48px 0;
   margin: 0;
   min-height: 100px;
   text-align: center;
@@ -58,12 +69,14 @@ export default DevSection;
   flex-direction: column;
   justify-content: center;
   border-radius: 8px;
+  transform: translateX(0%);
+  z-index: 2;
   .buttons {
     text-align: center;
     justify-content: center;
     .button-wrapper {
-      padding-left: 24px;
-      padding-right: 24px;
+      padding-left: 20px;
+      padding-right: 20px;
       margin: 0 8px;
     }
   }

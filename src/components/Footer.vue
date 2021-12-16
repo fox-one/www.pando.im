@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <v-container class="footer">
     <div class="footer-inner mt-4">
       <v-row>
         <v-col cols="12">
@@ -20,7 +20,7 @@
 
       <v-row class="meta-row mb-3">
         <v-col cols="12" md="3" class="pa-4">
-          <div class="f-caption f-greyscale-3">Copyright © 2021 Pando</div>
+          <div class="body-2 greyscale_3--text">Copyright © 2021 Pando</div>
         </v-col>
 
         <v-col cols="12" md="9" class="pa-4">
@@ -33,7 +33,7 @@
               class="link d-flex"
               target="_blank"
             >
-              <span class="f-caption font-weight-bold">
+              <span class="body-2 font-weight-bold">
                 {{ link.label }}
               </span>
             </a>
@@ -41,7 +41,7 @@
         </v-col>
       </v-row>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -108,10 +108,9 @@ export default ProductItem;
 .footer {
   padding-top: 20px;
   padding-bottom: 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .footer-inner {
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto;
   .links {
     justify-content: flex-end;

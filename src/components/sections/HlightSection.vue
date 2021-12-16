@@ -1,10 +1,10 @@
 <template>
-  <div class="section">
+  <v-container class="section">
     <div class="section-inner d-flex">
       <div class="left">
         <div class="content d-flex">
           <h3 class="section-title mb-5">{{ title }}</h3>
-          <div class="text f-body-1 f-greyscale-3 mb-5">
+          <div class="text body-1 greyscale_3--text mb-5">
             <p v-for="(line, ix) in lines" :key="ix" v-html="line"></p>
           </div>
           <div class="">
@@ -45,7 +45,7 @@
         <img class="image" :src="image" />
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -71,11 +71,19 @@ export default HlightSection;
 </script>
 
 <style lang="scss" scoped>
+.section {
+  max-width: 1280px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
 .section-inner {
   flex-wrap: wrap;
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto;
   justify-content: space-between;
+  .section-title {
+    font-size: 32px;
+  }
   .left {
     flex: 1;
     display: flex;
@@ -97,28 +105,36 @@ export default HlightSection;
   }
   .right {
     flex: 1;
+    display: flex;
+    justify-content: center;
     .image {
       max-height: 400px;
     }
   }
 }
 @media only screen and (max-width: 600px) {
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
   .section-inner {
     text-align: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    .section-title {
+      font-size: 24px;
+    }
     .left {
-      padding: 20px;
-      align-items: center;
+      text-align: left;
       .content {
         padding-right: 20px;
         padding-left: 20px;
         .launch-link {
-          justify-content: center;
+          justify-content: flex-start;
         }
       }
     }
     .right {
-      padding-top: 20px;
+      padding-bottom: 20px;
       .image {
         width: 90%;
       }

@@ -6,7 +6,7 @@
         <h1 class="home-headline">{{ $t("headline") }}</h1>
         <h2 class="">
           <div
-            class="home-sub-headline f-greyscale-3"
+            class="home-sub-headline greyscale_3--text"
             v-html="$t('description')"
           ></div>
         </h2>
@@ -109,7 +109,7 @@ export default IndexPage;
 <style lang="scss" scoped>
 .products {
   flex-wrap: wrap;
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto 40px auto;
   justify-content: space-between;
 }
@@ -136,7 +136,7 @@ export default IndexPage;
   }
   .head-content {
     .home-headline {
-      font-size: 40px;
+      font-size: 64px;
     }
 
     .home-sub-headline {

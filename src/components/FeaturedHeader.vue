@@ -1,6 +1,7 @@
 <template>
-  <section class="section" ref="section">
-    <div class="section-inner" ref="inner" :style="style">
+  <v-container class="section" ref="section">
+    <div class="section-bg" ref="bg" :style="style"></div>
+    <div class="section-inner" ref="inner">
       <template v-if="layout === 'center'">
         <div
           class="content d-flex flex-column justify-center align-center"
@@ -57,7 +58,26 @@
 
             <h1 class="section-title mb-5">{{ title }}</h1>
 
-            <div v-if="text" class="section-text mb-5">{{ text }}</div>
+            <div v-if="stat" class="stat">
+              <v-row>
+                <v-col
+                  cols="6"
+                  lg="3"
+                  v-for="(item, ix) in stat"
+                  :key="`stat-${ix}`"
+                >
+                  <div
+                    class="label body-2 font-weight-bold mb-2"
+                    :style="{ color: color }"
+                  >
+                    {{ item.label }}
+                  </div>
+                  <div class="value font-weight-bold">
+                    {{ item.value }}
+                  </div>
+                </v-col>
+              </v-row>
+            </div>
 
             <div class="buttons">
               <a :href="primaryButton.url" class="button-wrapper">
@@ -82,7 +102,7 @@
         </div>
       </template>
     </div>
-  </section>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -101,13 +121,14 @@ class FeaturedHeader extends Vue {
   @Prop({ default: null }) primaryButton!: any;
   @Prop({ default: null }) secondaryButton!: any;
   @Prop({ default: "left" }) layout!: string;
+  @Prop({ default: [] }) stat!: Array<any>;
 
   mounted() {
-    Vue.nextTick(() => {
-      const section = this.$refs.section as any;
-      const inner = this.$refs.inner as any;
-      section.style.height = inner.offsetHeight + "px";
-    });
+    // Vue.nextTick(() => {
+    //   const section = this.$refs.section as any;
+    //   const inner = this.$refs.inner as any;
+    //   section.style.height = inner.offsetHeight + "px";
+    // });
   }
 
   get style() {
@@ -123,24 +144,37 @@ export default FeaturedHeader;
 <style lang="scss" scoped>
 .section {
   clear: both;
-  max-width: 960px;
+  max-width: 1280px;
   padding-top: 0;
   padding-bottom: 0;
+  position: relative;
 }
-
+.section-bg {
+  background-size: cover;
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  display: block;
+  content: " ";
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
 .section-inner {
-  padding: 72px 0 0 0;
+  padding: 48px 0 0 0;
   margin: 0;
   min-height: 100px;
-  position: absolute;
-  left: 0;
-  right: 0;
+  transform: translateX(0%);
+
+  // position: absolute;
+  // left: 0;
+  // right: 0;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   .content {
-    max-width: 960px;
+    max-width: 1280px;
     margin: 0 auto;
     width: 100%;
   }
@@ -156,10 +190,16 @@ export default FeaturedHeader;
     background-position: left center;
   }
   .section-title {
-    font-size: 38px;
+    font-size: 32px;
   }
   .section-text {
     margin-bottom: 40px;
+  }
+  .stat {
+    margin: 36px 0;
+    .value {
+      font-size: 32px;
+    }
   }
   .buttons {
     margin-bottom: 20px;
@@ -183,7 +223,11 @@ export default FeaturedHeader;
   }
 }
 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   .picture {
+    margin: 72px 0 0 0;
     width: 353px;
     height: 360px;
     background-size: cover;
@@ -194,6 +238,9 @@ export default FeaturedHeader;
     height: 77px;
     width: 300px;
   }
+  .section-title {
+    font-size: 38px;
+  }
 }
 @media only screen and (max-width: 600px) {
   .section-inner {
@@ -202,15 +249,22 @@ export default FeaturedHeader;
     }
   }
   .content {
-    padding: 0 20px;
+    padding: 0px;
     .logo {
       background-position: center;
     }
     .section-title {
-      font-size: 32px;
+      font-size: 24px;
+      text-align: center;
     }
     .section-text {
       margin-bottom: 20px;
+    }
+    .stat {
+      text-align: center;
+      .value {
+        font-size: 24px;
+      }
     }
 
     .buttons {

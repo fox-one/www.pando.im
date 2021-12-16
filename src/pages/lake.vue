@@ -9,6 +9,7 @@
       :picture="'/screenshots/lake-sideview.png'"
       :bg-color="'#EDFBFC'"
       :color="'#0FC2FC'"
+      :stat="statInfo"
     />
     <hlight-section
       :title="$t('product.lake.hlight')"
@@ -24,7 +25,6 @@
       :features="features"
       :image="require('~/assets/images/products/lake-features.png')"
     />
-    <div class="py-10" />
     <mtg-section
       :title="$t('powered_by_mtg')"
       :text="$t('product.lake.mtg_text')"
@@ -51,6 +51,14 @@ import { mtgMembers } from "~/constants";
   },
 })
 class LakePage extends Mixins(mixins.page) {
+  info: any = null;
+
+  totalLiquidity = 0;
+
+  totalAssets = 0;
+
+  totalPairs = 0;
+
   get title() {
     return this.$t("product.lake.title") as string;
   }
@@ -100,6 +108,45 @@ class LakePage extends Mixins(mixins.page) {
     return mtgMembers.filter((x) => {
       return names.includes(x.name);
     });
+  }
+
+  get statInfo() {
+    if (this.info) {
+      return [
+        {
+          label: "Total Liquidity",
+          value: this.$utils.helper.displayUsd(this.totalLiquidity.toString()),
+        },
+        {
+          label: "24h Volume",
+          value: this.$utils.helper.displayUsd(this.info.data.volume_24h),
+        },
+        {
+          label: "24h Trades",
+          value: this.info.data.transaction_count_24h,
+        },
+        { label: "Pools", value: this.totalPairs },
+      ];
+    }
+    return [];
+  }
+
+  async mounted() {
+    this.info = await this.$apis.getLakeStat();
+    if (this.info) {
+      let totalLiquidity = 0;
+      const assetSet = new Set();
+      for (let ix = 0; ix < this.info?.data?.pairs.length; ix++) {
+        const item = this.info?.data?.pairs[ix];
+        totalLiquidity +=
+          parseFloat(item.base_value) + parseFloat(item.quote_value);
+        assetSet.add(item.base_asset_id);
+        assetSet.add(item.quote_asset_id);
+      }
+      this.totalLiquidity = totalLiquidity;
+      this.totalAssets = assetSet.size;
+      this.totalPairs = this.info?.data?.pairs.length;
+    }
   }
 }
 export default LakePage;
