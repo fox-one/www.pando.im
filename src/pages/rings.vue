@@ -102,7 +102,7 @@ class RingsPage extends Mixins(mixins.page) {
         },
         {
           label: this.$t("stat.total_borrowed"),
-          value: this.$utils.helper.displayUsd(this.info.total_supply),
+          value: this.$utils.helper.displayUsd(this.info.total_borrow),
         },
         {
           label: this.$t("stat.24h_supply_volume"),
