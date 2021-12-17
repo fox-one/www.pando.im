@@ -2,7 +2,7 @@
   <v-container class="section">
     <div class="section-inner d-flex">
       <h3 class="section-title mb-5">{{ title }}</h3>
-      <div v-if="text" class="f-body-2 f-greyscale-3 mb-5">{{ text }}</div>
+      <div v-if="text" class="body-2 greyscale_3--text mb-5">{{ text }}</div>
       <div class="table-wrapper py-10">
         <table class="table" border="0" cellspacing="0">
           <thead>
@@ -107,6 +107,9 @@ export default TableSection;
     overflow-x: auto;
     padding: 0 20px;
   }
+  .section-title {
+    font-size: 32px;
+  }
 }
 .table {
   width: 100%;
@@ -153,5 +156,10 @@ export default TableSection;
   }
 }
 @media only screen and (max-width: 600px) {
+  .section-inner {
+    .section-title {
+      font-size: 24px;
+    }
+  }
 }
 </style>

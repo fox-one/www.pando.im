@@ -78,7 +78,7 @@
         :to="item.route"
       >
         <span
-          class="body-2 font-weight-bold mx-4 greyscale_3--text"
+          class="nav-item-text body-2 font-weight-bold greyscale_3--text"
           :class="
             currentRouteName === item.name
               ? 'greyscale_1--text'
@@ -161,6 +161,11 @@ export default AppNav;
       transform: translateX(-16px);
       z-index: 10000;
     }
+  }
+  .nav-item-text {
+    font-size: 16px;
+    margin: 0 24px;
+    letter-spacing: 0;
   }
 }
 @media only screen and (max-width: 600px) {
