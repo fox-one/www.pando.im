@@ -73,6 +73,9 @@ export default FeatureListSection;
   }
 }
 @media only screen and (max-width: 600px) {
+  .section {
+    margin-top: 48px;
+  }
   .section-inner {
     text-align: center;
     .content {

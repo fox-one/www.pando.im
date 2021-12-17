@@ -74,7 +74,7 @@ class LakePage extends Mixins(mixins.page) {
     return [
       {
         label: this.$t("product.lake.launch_label"),
-        url: "https://lake.pando.im",
+        url: "https://app.4swap.org",
       },
       {
         label: this.$t("documents"),

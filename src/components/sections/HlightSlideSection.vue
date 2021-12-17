@@ -58,7 +58,7 @@ class HlightSection extends Vue {
   }
 
   get carouseHeight() {
-    return this.$utils.helper.isMobile() ? 360 : 500;
+    return this.$utils.helper.isMobile() ? 360 : 528;
   }
 
   switchTab(ix) {
@@ -101,7 +101,7 @@ export default HlightSection;
     flex: 0;
     padding: 40px 0;
     .image {
-      max-height: 500px;
+      max-height: 528px;
     }
   }
   .slide-title {

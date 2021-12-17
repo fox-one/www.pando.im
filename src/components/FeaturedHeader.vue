@@ -13,7 +13,7 @@
 
           <h1 class="section-title text-center mb-5">{{ title }}</h1>
 
-          <div v-if="text" class="section-text text-center f-greyscale-3">
+          <div v-if="text" class="section-text text-center greyscale_3--text">
             {{ text }}
           </div>
 
@@ -86,9 +86,13 @@
                 }}</f-button>
               </a>
               <a :href="secondaryButton.url" class="button-wrapper">
-                <f-button class="button secondary" color="secondray" x-large>{{
-                  secondaryButton.label
-                }}</f-button>
+                <f-button class="button secondary" color="secondray" x-large>
+                  <v-icon v-if="secondaryButton.icon" size="16" class="mr-2">{{
+                    secondaryButton.icon
+                  }}</v-icon>
+
+                  <span>{{ secondaryButton.label }}</span>
+                </f-button>
               </a>
             </div>
           </div>
@@ -239,7 +243,7 @@ export default FeaturedHeader;
     width: 300px;
   }
   .section-title {
-    font-size: 38px;
+    font-size: 64px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -284,6 +288,9 @@ export default FeaturedHeader;
     .logo {
       height: 32px;
       min-width: 120px;
+    }
+    .section-title {
+      font-size: 24px;
     }
   }
   .right {
