@@ -13,7 +13,7 @@
 
           <h1 class="section-title text-center mb-5">{{ title }}</h1>
 
-          <div v-if="text" class="section-text text-center greyscale_3--text">
+          <div v-if="text" class="section-text text-center">
             {{ text }}
           </div>
 
@@ -25,9 +25,12 @@
                 :disabled="primaryButton.disabled"
                 x-large
               >
-                <v-icon v-if="primaryButton.icon" size="16" class="mr-2">{{
-                  primaryButton.icon
-                }}</v-icon>
+                <v-img
+                  v-if="primaryButton.icon"
+                  :src="primaryButton.icon"
+                  max-width="16"
+                  class="mr-2"
+                />
                 <span>{{ primaryButton.label }}</span>
               </f-button>
             </a>
@@ -39,9 +42,12 @@
                 x-large
                 class="button"
               >
-                <v-icon v-if="secondaryButton.icon" size="16" class="mr-2">{{
-                  secondaryButton.icon
-                }}</v-icon>
+                <v-img
+                  v-if="secondaryButton.icon"
+                  :src="secondaryButton.icon"
+                  max-width="16"
+                  class="mr-2"
+                />
                 <span>{{ secondaryButton.label }}</span>
               </f-button>
             </a>
@@ -87,10 +93,12 @@
               </a>
               <a :href="secondaryButton.url" class="button-wrapper">
                 <f-button class="button secondary" color="secondray" x-large>
-                  <v-icon v-if="secondaryButton.icon" size="16" class="mr-2">{{
-                    secondaryButton.icon
-                  }}</v-icon>
-
+                  <v-img
+                    v-if="secondaryButton.icon"
+                    :src="secondaryButton.icon"
+                    max-width="16"
+                    class="mr-2"
+                  />
                   <span>{{ secondaryButton.label }}</span>
                 </f-button>
               </a>
@@ -198,6 +206,7 @@ export default FeaturedHeader;
   }
   .section-text {
     margin-bottom: 40px;
+    opacity: 0.4;
   }
   .stat {
     margin: 36px 0;
@@ -275,6 +284,8 @@ export default FeaturedHeader;
       display: flex;
       padding: 20px;
       flex-direction: column;
+      width: 100%;
+      margin-bottom: 0;
       .button-wrapper {
         width: 100%;
         margin-bottom: 20px;

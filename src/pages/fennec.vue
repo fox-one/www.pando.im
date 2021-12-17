@@ -60,14 +60,14 @@ class FennecPage extends Mixins(mixins.page) {
       {
         color: "fennec",
         label: this.launchLabel,
-        icon: this.$icons.mdiPlus,
+        icon: require("~/assets/images/button-icons/add.svg"),
         url: this.fennecInstallUrl,
         disabled: this.$utils.helper.isMobile(),
       },
       {
         color: "darkmist",
         label: this.$t("other_versions"),
-        icon: this.$icons.mdiOpenInNew,
+        icon: require("~/assets/images/button-icons/jump.svg"),
         url: fennecInstallURLs.source,
       },
     ];

@@ -20,7 +20,7 @@
 
       <v-row class="meta-row mb-3">
         <v-col cols="12" md="3" class="pa-4">
-          <div class="body-2 greyscale_3--text">Copyright © 2021 Pando</div>
+          <div class="body-2 copyright">Copyright © 2021 Pando</div>
         </v-col>
 
         <v-col cols="12" md="9" class="pa-4">
@@ -112,6 +112,9 @@ export default ProductItem;
 .footer-inner {
   max-width: 1280px;
   margin: 0 auto;
+  .copyright {
+    opacity: 0.4;
+  }
   .links {
     justify-content: flex-end;
     .link {

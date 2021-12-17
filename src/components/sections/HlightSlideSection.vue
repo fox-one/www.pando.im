@@ -18,8 +18,8 @@
 
       <div class="right">
         <div class="content d-flex">
-          <h2 class="slide-title mb-5">{{ title }}</h2>
-          <div class="slide-text f-body-1">
+          <h2 class="slide-title">{{ title }}</h2>
+          <div class="slide-text">
             <p v-for="(line, ix) in lines" :key="ix" v-html="line"></p>
           </div>
           <div class="tabs">
@@ -58,7 +58,7 @@ class HlightSection extends Vue {
   }
 
   get carouseHeight() {
-    return this.$utils.helper.isMobile() ? 360 : 528;
+    return this.$utils.helper.isMobile() ? 360 : 716;
   }
 
   switchTab(ix) {
@@ -69,10 +69,13 @@ export default HlightSection;
 </script>
 
 <style lang="scss" scoped>
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 .section-inner {
   flex-wrap: wrap;
   max-width: 1280px;
-  margin: 72px auto;
   justify-content: space-between;
   background: linear-gradient(180deg, #473859 0%, #393453 100%);
   box-shadow: inset 0px -1px 0px #29253e, inset 0px 1px 0px #625375;
@@ -101,17 +104,21 @@ export default HlightSection;
     flex: 0;
     padding: 40px 0;
     .image {
-      max-height: 528px;
+      max-height: 716px;
     }
   }
   .slide-title {
     font-size: 42px;
     font-weight: bold;
+    margin-bottom: 48px;
   }
   .slide-text {
-    opacity: 0.5;
+    color: #706190;
+    font-size: 24px;
+    margin-bottom: 24px;
   }
 }
+
 .tabs {
   text-align: left;
   ::v-deep {
@@ -119,17 +126,38 @@ export default HlightSection;
       background: transparent !important;
       .v-tab {
         justify-content: flex-start;
-        padding-left: 30px;
+        padding-left: 48px;
         text-transform: capitalize;
         font-weight: bold;
+        font-size: 24px;
+        color: #896fae !important;
+
+        margin-bottom: 24px;
         &::before {
           display: none !important;
           opacity: 0 !important;
         }
+        &.v-tab--active {
+          color: #fff !important;
+        }
       }
     }
+    .v-slide-group__content {
+      position: relative;
+      &::before {
+        position: absolute;
+        border-radius: 2px;
+        top: 14px;
+        bottom: 38px;
+        background: rgba(255, 255, 255, 0.2);
+        width: 4px;
+        content: " ";
+        display: block;
+      }
+    }
+
     .v-tabs-slider {
-      width: 3px;
+      width: 4px;
       border-radius: 2px;
       height: 20px;
       transform: translateY(14px);
@@ -140,7 +168,7 @@ export default HlightSection;
   .section-inner {
     text-align: center;
     flex-direction: column;
-    margin: 0 20px;
+    margin: 0;
     .right {
       padding: 20px;
       padding-left: 20px;
@@ -160,8 +188,38 @@ export default HlightSection;
       }
     }
     .slide-title {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+    .slide-text {
+      font-size: 16px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .tabs {
+    text-align: left;
+    ::v-deep {
+      .v-tabs-bar {
+        .v-tab {
+          margin-bottom: 0px;
+          font-size: 16px;
+          padding-left: 24px;
+        }
+      }
+      .v-slide-group__content {
+        position: relative;
+        &::before {
+          position: absolute;
+          border-radius: 2px;
+          top: 14px;
+          bottom: 14px;
+          background: rgba(255, 255, 255, 0.2);
+          width: 4px;
+          content: " ";
+          display: block;
+        }
+      }
     }
   }
 }

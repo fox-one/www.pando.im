@@ -78,6 +78,7 @@ class LakePage extends Mixins(mixins.page) {
       },
       {
         label: this.$t("documents"),
+        icon: require("~/assets/images/button-icons/docs.svg"),
         url: "https://docs.pando.im/docs/lake/intro",
       },
     ];
@@ -114,18 +115,18 @@ class LakePage extends Mixins(mixins.page) {
     if (this.info) {
       return [
         {
-          label: "Total Liquidity",
+          label: this.$t("stat.total_liquidity"),
           value: this.$utils.helper.displayUsd(this.totalLiquidity.toString()),
         },
         {
-          label: "24h Volume",
+          label: this.$t("stat.24h_volume"),
           value: this.$utils.helper.displayUsd(this.info.data.volume_24h),
         },
         {
-          label: "24h Trades",
+          label: this.$t("stat.24h_trades"),
           value: this.info.data.transaction_count_24h,
         },
-        { label: "Pools", value: this.totalPairs },
+        { label: this.$t("stat.pools"), value: this.totalPairs },
       ];
     }
     return [];

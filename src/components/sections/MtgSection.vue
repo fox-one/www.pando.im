@@ -1,5 +1,5 @@
 <template>
-  <section class="section" ref="section">
+  <v-container class="section" ref="section">
     <div class="section-inner" ref="inner">
       <h3 class="section-title mb-5">{{ title }}</h3>
       <div class="body-2 mb-5 greyscale_3--text px-5" v-html="text"></div>
@@ -60,7 +60,7 @@
         <div class="mask invert"></div>
       </div>
     </div>
-  </section>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -103,7 +103,7 @@ export default MtgSection;
 
 <style lang="scss" scoped>
 .section {
-  max-width: 960px;
+  max-width: 1280px;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -128,13 +128,13 @@ export default MtgSection;
   .members {
     display: flex;
     flex-wrap: wrap;
-    max-width: 960px;
+    max-width: 1280px;
     justify-content: space-between;
     margin: 0 auto;
     width: 100%;
     .member {
       cursor: pointer;
-      width: 309px;
+      width: 416px;
       background: #fff;
       border-radius: 8px;
       position: relative;

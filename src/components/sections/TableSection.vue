@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <v-container class="section">
     <div class="section-inner d-flex">
       <h3 class="section-title mb-5">{{ title }}</h3>
       <div v-if="text" class="f-body-2 f-greyscale-3 mb-5">{{ text }}</div>
@@ -51,7 +51,7 @@
         </table>
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -99,7 +99,7 @@ export default TableSection;
 <style lang="scss" scoped>
 .section-inner {
   flex-direction: column;
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
   .table-wrapper {

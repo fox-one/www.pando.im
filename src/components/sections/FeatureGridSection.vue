@@ -18,7 +18,7 @@
                 <h4 class="feat-title title font-weight-bold">
                   {{ feat.title }}
                 </h4>
-                <div class="feat-text body-2 greyscale_3--text">
+                <div class="feat-text body-1">
                   {{ feat.text }}
                 </div>
               </div>
@@ -43,6 +43,10 @@ export default FeatureListSection;
 </script>
 
 <style lang="scss" scoped>
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 .section-inner {
   flex-wrap: wrap;
   max-width: 1280px;
@@ -67,15 +71,13 @@ export default FeatureListSection;
         }
         .feat-text {
           margin-bottom: 16px;
+          opacity: 0.4;
         }
       }
     }
   }
 }
 @media only screen and (max-width: 600px) {
-  .section {
-    margin-top: 48px;
-  }
   .section-inner {
     text-align: center;
     .content {

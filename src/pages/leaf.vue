@@ -8,6 +8,7 @@
       :logo="require('~/assets/images/products/leaf-with-title.png')"
       :picture="'/screenshots/leaf-sideview.png'"
       :bg-color="'#F1FDF3'"
+      :stat="statInfo"
       :color="'#8FE613'"
     />
     <hlight-section
@@ -56,6 +57,11 @@ import { mtgMembers } from "~/constants";
   },
 })
 class LeafPage extends Mixins(mixins.page) {
+  info: any = null;
+  totalSupply = 0;
+  totalCollateral = 0;
+  collateralRatio = 0;
+
   get title() {
     return this.$t("product.leaf.title") as string;
   }
@@ -68,6 +74,7 @@ class LeafPage extends Mixins(mixins.page) {
       },
       {
         label: this.$t("documents"),
+        icon: require("~/assets/images/button-icons/docs.svg"),
         url: "https://docs.pando.im/docs/leaf/intro",
       },
     ];
@@ -152,6 +159,38 @@ class LeafPage extends Mixins(mixins.page) {
       return names.includes(x.name);
     });
     return ret;
+  }
+
+  get statInfo() {
+    if (this.info) {
+      return [
+        {
+          label: this.$t("stat.total_collateral"),
+          value: this.$utils.helper.displayUsd(this.totalCollateral.toString()),
+        },
+        {
+          label: this.$t("stat.total_supply"),
+          value: this.$utils.helper.displayUsd(this.totalSupply.toString()),
+        },
+        {
+          label: this.$t("stat.collateral_ratio"),
+          value: this.collateralRatio.toFixed(2) + "%",
+        },
+      ];
+    }
+    return [];
+  }
+  async mounted() {
+    this.info = await this.$apis.getLeafStat();
+    if (this.info) {
+      const collaterals = this.info.data.collaterals;
+      for (let ix = 0; ix < collaterals.length; ix++) {
+        const cat: any = collaterals[ix];
+        this.totalCollateral += parseFloat(cat.ink) * parseFloat(cat.price);
+        this.totalSupply += parseFloat(cat.debt);
+      }
+      this.collateralRatio = (this.totalCollateral / this.totalSupply) * 100;
+    }
   }
 }
 export default LeafPage;

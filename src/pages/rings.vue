@@ -8,6 +8,7 @@
       :logo="require('~/assets/images/products/rings-with-title.png')"
       :picture="'/screenshots/rings-sideview.png'"
       :bg-color="'#FEFAF3'"
+      :stat="statInfo"
       :color="'#FF9E29'"
     />
     <hlight-section
@@ -49,6 +50,8 @@ import { mtgMembers } from "~/constants";
   },
 })
 class RingsPage extends Mixins(mixins.page) {
+  info: any = null;
+
   get title() {
     return this.$t("product.rings.title") as string;
   }
@@ -61,6 +64,7 @@ class RingsPage extends Mixins(mixins.page) {
       },
       {
         label: this.$t("documents"),
+        icon: require("~/assets/images/button-icons/docs.svg"),
         url: "https://docs.pando.im/docs/rings/intro",
       },
     ];
@@ -87,6 +91,34 @@ class RingsPage extends Mixins(mixins.page) {
       return names.includes(x.name);
     });
     return ret;
+  }
+
+  get statInfo() {
+    if (this.info) {
+      return [
+        {
+          label: this.$t("stat.total_supply"),
+          value: this.$utils.helper.displayUsd(this.info.total_supply),
+        },
+        {
+          label: this.$t("stat.total_borrowed"),
+          value: this.$utils.helper.displayUsd(this.info.total_supply),
+        },
+        {
+          label: this.$t("stat.24h_supply_volume"),
+          value: this.$utils.helper.displayUsd(this.info.supply_volume_of_24h),
+        },
+        {
+          label: this.$t("stat.24h_borrow_volume"),
+          value: this.$utils.helper.displayUsd(this.info.borrow_volume_of_24h),
+        },
+      ];
+    }
+    return [];
+  }
+
+  async mounted() {
+    this.info = await this.$apis.getRingsStat();
   }
 }
 export default RingsPage;
