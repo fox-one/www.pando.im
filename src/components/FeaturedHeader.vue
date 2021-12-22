@@ -193,6 +193,9 @@ export default FeaturedHeader;
 }
 .content {
   flex: 1;
+  .left {
+    flex: 1;
+  }
   .logo {
     height: 40px;
     display: inline-block;

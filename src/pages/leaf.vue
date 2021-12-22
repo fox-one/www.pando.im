@@ -118,7 +118,7 @@ class LeafPage extends Mixins(mixins.page) {
           label: this.$t("product.leaf.table_val_collateral_rate"),
           colHead: 1,
         },
-        { label: "200%+", hlight: 1 },
+        { label: "350%+", hlight: 1 },
         { label: "150%" },
         { label: "100%" },
         { label: "🤔🤔🤔" },
