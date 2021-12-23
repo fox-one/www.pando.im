@@ -51,7 +51,7 @@
   "product.leaf.table_val_collateral_rate": "担保率",
   "product.leaf.table_val_collateral_assets": "担保資産",
   "product.leaf.table_val_collateral_assets_1": "主にBTCとETH",
-  "product.leaf.table_val_collateral_assets_2": "イーサリアムベースの資産",
+  "product.leaf.table_val_collateral_assets_2": "Mainly ETH and USDC",
   "product.leaf.table_val_collateral_assets_3": "米ドル",
   "product.leaf.table_val_collateral_assets_4": "現金、債券、ローン、その他の投資",
   "product.leaf.table_val_decentralized": "分散型？",

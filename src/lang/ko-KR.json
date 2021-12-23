@@ -51,7 +51,7 @@
   "product.leaf.table_val_collateral_rate": "담보율",
   "product.leaf.table_val_collateral_assets": "담보물",
   "product.leaf.table_val_collateral_assets_1": "주로 BTC와 ETH",
-  "product.leaf.table_val_collateral_assets_2": "이더리움 기반 자산",
+  "product.leaf.table_val_collateral_assets_2": "Mainly ETH and USDC",
   "product.leaf.table_val_collateral_assets_3": "미국 달러",
   "product.leaf.table_val_collateral_assets_4": "현금, 채권, 대출 및 기타 투자",
   "product.leaf.table_val_decentralized": "탈중앙화?",

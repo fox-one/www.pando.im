@@ -51,7 +51,7 @@
   "product.leaf.table_val_collateral_rate": "抵押率",
   "product.leaf.table_val_collateral_assets": "抵押品",
   "product.leaf.table_val_collateral_assets_1": "主要是 BTC 和 ETH",
-  "product.leaf.table_val_collateral_assets_2": "基於 Ethereum 的資產",
+  "product.leaf.table_val_collateral_assets_2": "Mainly ETH and USDC",
   "product.leaf.table_val_collateral_assets_3": "美元",
   "product.leaf.table_val_collateral_assets_4": "現金、債券、貸款和其他投資品",
   "product.leaf.table_val_decentralized": "分散性？",
