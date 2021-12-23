@@ -55,7 +55,7 @@
   "product.leaf.table_val_collateral_rate": "Collateral rate",
   "product.leaf.table_val_collateral_assets": "Collateral assets",
   "product.leaf.table_val_collateral_assets_1": "Mainly BTC and ETH",
-  "product.leaf.table_val_collateral_assets_2": "Ethereum-based assets",
+  "product.leaf.table_val_collateral_assets_2": "Mainly ETH and USDC",
   "product.leaf.table_val_collateral_assets_3": "US Dollar",
   "product.leaf.table_val_collateral_assets_4": "Cash, bonds, loans and other investments",
   "product.leaf.table_val_decentralized": "Decentralized?",
