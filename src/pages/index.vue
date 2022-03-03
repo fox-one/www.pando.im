@@ -21,6 +21,30 @@
       />
     </div>
 
+    <v-layout
+      class="products-lots"
+      :class="isMobile && 'px-4'"
+      column
+      align-center
+      justify-center
+    >
+      <h3 class="text-center mb-6">{{ $t("product.lots.title") }}</h3>
+      <h4 class="text-center greyscale_3--text mb-16">
+        {{ $t("product.lots.subtitle") }}
+      </h4>
+      <v-layout wrap justify-space-around>
+        <pando-lots
+          v-for="lot in lots"
+          class="products-lots-item"
+          :key="lot.name"
+          :group-id="lot.id"
+          :theme-color="lot.theme"
+          :api-base="lot.api_base"
+          :ws-base="lot.ws_base"
+        />
+      </v-layout>
+    </v-layout>
+
     <dev-section />
 
     <wallet-section />
@@ -44,6 +68,10 @@ import mixins from "@/mixins";
 class IndexPage extends Mixins(mixins.page) {
   get title() {
     return this.$t("title.home") as string;
+  }
+
+  get isMobile() {
+    return this.$utils.helper.isMobile();
   }
 
   get products() {
@@ -97,6 +125,40 @@ class IndexPage extends Mixins(mixins.page) {
       },
     ];
   }
+
+  get lots() {
+    return [
+      {
+        name: "4wap-zh",
+        id: "7000103578",
+        theme: "#EE4596",
+        api_base: "https://supergroup-api.mixin.fan/v1",
+        ws_base: "wss://supergroup-ws.mixin.fan",
+      },
+      {
+        name: "4wap-en",
+        id: "7000103925",
+        theme: "#EE4596",
+        api_base: "https://supergroup-api.mixin.fan/v1",
+        ws_base: "wss://supergroup-ws.mixin.fan",
+      },
+      {
+        name: "pando-zh",
+        id: "7000104111",
+        theme: "#000000",
+        api_base: "https://supergroup-api.mixin.fan/v1",
+        ws_base: "wss://supergroup-ws.mixin.fan",
+      },
+      {
+        name: "pando-en",
+        id: "7000104110",
+        theme: "#000000",
+        api_base: "https://supergroup-api.mixin.fan/v1",
+        ws_base: "wss://supergroup-ws.mixin.fan",
+      },
+    ];
+  }
+
   launch(prod) {
     if (prod.url) {
       window.open(prod.url);
@@ -110,7 +172,7 @@ export default IndexPage;
 .products {
   flex-wrap: wrap;
   max-width: 1280px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 128px auto;
   justify-content: space-between;
 }
 
@@ -144,6 +206,22 @@ export default IndexPage;
       max-width: 480px;
       font-weight: normal !important;
     }
+  }
+}
+
+.products-lots {
+  margin-bottom: 80px;
+  &-item {
+    margin-bottom: 32px;
+    height: 96px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  h4 {
+    font-weight: 500;
+    font-size: 14px;
   }
 }
 
