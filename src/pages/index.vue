@@ -92,8 +92,8 @@ class IndexPage extends Mixins(mixins.page) {
         title: this.$t("product.root.title"),
         subtitle: this.$t("product.root.subtitle"),
         runnable: false,
-        icon: require("~/assets/images/products/other.png"),
-        icon_hover: require("~/assets/images/products/other.png"),
+        // icon: require("~/assets/images/products/other.png"),
+        // icon_hover: require("~/assets/images/products/other.png"),
       },
     ];
   }

@@ -11,6 +11,7 @@
       <div class="product-content">
         <div class="product-icon mb-3">
           <v-img
+            v-if="product.icon"
             :width="32"
             :height="32"
             :src="product.icon"
@@ -18,6 +19,7 @@
             class="product-icon-image"
           />
           <v-img
+            v-if="product.icon_hover"
             :width="32"
             :height="32"
             :src="product.icon_hover"
@@ -52,6 +54,7 @@
 
       <div class="product-screenshot">
         <v-img
+          v-if="product.name !== 'other'"
           class="product-screenshot-image"
           :src="`/screenshots/${product.name}.png`"
         />
@@ -90,17 +93,21 @@ class ProductItem extends Vue {
 
   mouseover() {
     this.hover = true;
-    this.animation.play();
+    if (this.animation) {
+      this.animation.play();
+    }
   }
 
   mouseleave() {
     this.hover = false;
-    this.animation.stop();
+    if (this.animation) {
+      this.animation.stop();
+    }
   }
 
   mounted() {
     const ele = (this.$refs as any).ani;
-    if (this.animation === null) {
+    if (this.animation === null && this.product.name !== "other") {
       this.animation = lottie.loadAnimation({
         container: ele as Element, // the dom element that will contain the animation
         renderer: "svg",

@@ -15,7 +15,7 @@
               :key="wallet.name"
               class="wallet d-flex"
             >
-              <img :src="wallet.icon" class="icon mb-4" />
+              <img :src="wallet.icon" :alt="wallet.label" class="icon mb-4" />
               <nuxt-link v-if="wallet.route" :to="wallet.route">
                 <f-button color="primary" x-large>{{ wallet.label }}</f-button>
               </nuxt-link>

@@ -8,13 +8,19 @@
         width="100vw"
       >
         <template v-slot:activator="{ on }">
-          <v-btn depressed icon class="menu-toggle" v-on="on">
+          <v-btn depressed icon class="menu-toggle" v-on="on" aria-label="menu">
             <v-icon>$vuetify.icons.iconMenu</v-icon>
           </v-btn>
         </template>
         <v-card>
           <div class="pa-2">
-            <v-btn depressed icon class="menu-toggle" @click="dialog = false">
+            <v-btn
+              depressed
+              icon
+              class="menu-toggle"
+              @click="dialog = false"
+              aria-label="menu"
+            >
               <v-icon>{{ $icons.mdiClose }}</v-icon>
             </v-btn>
           </div>
