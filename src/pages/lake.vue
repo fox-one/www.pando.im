@@ -30,6 +30,14 @@
       :text="$t('product.lake.mtg_text')"
       :members="members"
     />
+    <pando-lots
+      class="products-lots"
+      type="button"
+      :group-id="lots.id"
+      :theme-color="lots.theme"
+      :api-base="lots.api_base"
+      :ws-base="lots.ws_base"
+    />
   </div>
 </template>
 
@@ -132,6 +140,24 @@ class LakePage extends Mixins(mixins.page) {
     return [];
   }
 
+  get lots() {
+    const zh = {
+      name: "4wap-zh",
+      id: "7000103578",
+      theme: "#EE4596",
+      api_base: "https://supergroup-api.mixin.fan/v1",
+      ws_base: "wss://supergroup-api.mixin.fan",
+    };
+    const en = {
+      name: "4wap-en",
+      id: "7000103925",
+      theme: "#EE4596",
+      api_base: "https://supergroup-api.mixin.fan/v1",
+      ws_base: "wss://supergroup-api.mixin.fan",
+    };
+    return this.$utils.helper.getLocale() === "en" ? en : zh;
+  }
+
   async mounted() {
     this.info = await this.$apis.getLakeStat();
     if (this.info) {
@@ -156,5 +182,11 @@ export default LakePage;
 <style lang="scss" scoped>
 .page {
   flex-direction: column;
+
+  .products-lots {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+  }
 }
 </style>

@@ -2,7 +2,6 @@
   "hello": "Hello",
   "headline": "I'm Pando",
   "description": "A decentralized financial network built with the <a href='https://developers.mixin.one/docs/mainnet/mtg/overview' target='_blank'>MTG</a> that includes a series of open financial protocols.",
-
   "home": "Home",
   "documents": "Documents",
   "launch": "Launch",
@@ -13,9 +12,9 @@
   "learn_more": "Learn More",
   "showcases": "Showcases",
   "other_versions": "Other versions",
-
   "title.home": "Pando Official Website",
-
+  "product.lots.title": "Community for pando",
+  "product.lots.subtitle": "This community is a great place to ask questions, and chat with others",
   "product.lake.title": "Pando Lake",
   "product.lake.title_4swap": "4swap",
   "product.lake.title_both": "Pando Lake & 4swap",
@@ -33,7 +32,6 @@
   "product.lake.mtg_text": "<strong>Lake & 4swap</strong> is built with Mixin Trusted Group. At present, there are 5 genesis nodes who serve the trades.",
   "product.lake.launch_label": "Swap coins",
   "product.lake.help_label": "Learn more",
-
   "product.leaf.title": "Pando Leaf",
   "product.leaf.title_short": "Leaf",
   "product.leaf.subtitle": "A decentralized financial network, implement a derivatives liquidity protocol.",
@@ -59,7 +57,6 @@
   "product.leaf.table_val_collateral_assets_3": "US Dollar",
   "product.leaf.table_val_collateral_assets_4": "Cash, bonds, loans and other investments",
   "product.leaf.table_val_decentralized": "Decentralized?",
-
   "product.rings.title": "Pando Rings",
   "product.rings.title_short": "Rings",
   "product.rings.subtitle": "An algorithmic, autonomous interest rate protocol.",
@@ -72,7 +69,6 @@
   "product.rings.mtg_text": "<strong>Rings</strong> is built with Mixin Trusted Group. At present, there are 6 genesis nodes who serve the service.",
   "product.rings.launch_label": "Go for a loan",
   "product.rings.help_label": "Learn more",
-
   "product.fennec.title": "Fennec",
   "product.fennec.subtitle": "A safe crypto wallet",
   "product.fennec.text": "Fennec makes it safe & easy for you to store, send, receive, stake, and swap tokens on Mixin Network.",
@@ -93,23 +89,18 @@
   "product.fennec.slide_item_label_1": "Collect Assets",
   "product.fennec.slide_item_label_2": "Send & Receive",
   "product.fennec.slide_item_label_3": "Swap Tokens",
-
   "product.root.title": "Pando Root",
   "product.root.subtitle": "The mystery project, coming soon.",
-
   "dev.title": "It is easy to develop dApps based on Pando",
   "dev.text": "Pando provides a set of developer-friendly APIs and SDK for third-party developers to build applications",
-
   "wallet.mm": "Mixin Messenger",
   "wallet.fennec": "Fennec",
   "wallet.title": "Supported wallets",
   "wallet.text": "Pando series products support all Mixin network compatible wallets",
-
   "3rd_party_apps.title": "Pando 3rd-party Applications",
   "3rd_party_apps.text": "Pando provides a set of developer-friendly APIs and SDK for third-party developers to build applications",
   "3rd_party_apps.launch_label": "Add your applications",
   "3rd_party_apps.docs": "Documents",
-
   "stat.total_supply": "Total Supply",
   "stat.total_borrowed": "Total Borrowed",
   "stat.total_collateral": "Total Collateral",
@@ -120,7 +111,6 @@
   "stat.24h_volume": "24h Volume",
   "stat.24h_trades": "24h Trades",
   "stat.pools": "Pools",
-
   "footer.documents": "Documents",
   "footer.documents.title": "Pando's documents for users and developers",
   "footer.blog": "Blog",

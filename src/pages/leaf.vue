@@ -34,6 +34,14 @@
       :text="$t('product.leaf.mtg_text')"
       :members="members"
     />
+    <pando-lots
+      class="products-lots"
+      type="button"
+      :group-id="lots.id"
+      :theme-color="lots.theme"
+      :api-base="lots.api_base"
+      :ws-base="lots.ws_base"
+    />
   </div>
 </template>
 
@@ -153,6 +161,24 @@ class LeafPage extends Mixins(mixins.page) {
     };
   }
 
+  get lots() {
+    const zh = {
+      name: "pando-zh",
+      id: "7000104111",
+      theme: "#000000",
+      api_base: "https://supergroup-api.mixin.fan/v1",
+      ws_base: "wss://supergroup-api.mixin.fan",
+    };
+    const en = {
+      name: "pando-en",
+      id: "7000104110",
+      theme: "#000000",
+      api_base: "https://supergroup-api.mixin.fan/v1",
+      ws_base: "wss://supergroup-api.mixin.fan",
+    };
+    return this.$utils.helper.getLocale() === "en" ? en : zh;
+  }
+
   get members() {
     const names = ["fox", "mixin", "b1", "poolin", "exin", "cedric"];
     const ret = mtgMembers.filter((x) => {
@@ -199,5 +225,11 @@ export default LeafPage;
 <style lang="scss" scoped>
 .page {
   flex-direction: column;
+
+  .products-lots {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+  }
 }
 </style>
