@@ -146,14 +146,14 @@ class LakePage extends Mixins(mixins.page) {
       id: "7000103578",
       theme: "#EE4596",
       api_base: "https://supergroup-api.mixin.fan/v1",
-      ws_base: "wss://supergroup-api.mixin.fan",
+      ws_base: "wss://supergroup-ws.mixin.fan",
     };
     const en = {
       name: "4wap-en",
       id: "7000103925",
       theme: "#EE4596",
       api_base: "https://supergroup-api.mixin.fan/v1",
-      ws_base: "wss://supergroup-api.mixin.fan",
+      ws_base: "wss://supergroup-ws.mixin.fan",
     };
     return this.$utils.helper.getLocale() === "en" ? en : zh;
   }

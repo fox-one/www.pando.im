@@ -133,28 +133,28 @@ class IndexPage extends Mixins(mixins.page) {
         id: "7000103578",
         theme: "#EE4596",
         api_base: "https://supergroup-api.mixin.fan/v1",
-        ws_base: "wss://supergroup-api.mixin.fan",
+        ws_base: "wss://supergroup-ws.mixin.fan",
       },
       {
         name: "4wap-en",
         id: "7000103925",
         theme: "#EE4596",
         api_base: "https://supergroup-api.mixin.fan/v1",
-        ws_base: "wss://supergroup-api.mixin.fan",
+        ws_base: "wss://supergroup-ws.mixin.fan",
       },
       {
         name: "pando-zh",
         id: "7000104111",
         theme: "#000000",
         api_base: "https://supergroup-api.mixin.fan/v1",
-        ws_base: "wss://supergroup-api.mixin.fan",
+        ws_base: "wss://supergroup-ws.mixin.fan",
       },
       {
         name: "pando-en",
         id: "7000104110",
         theme: "#000000",
         api_base: "https://supergroup-api.mixin.fan/v1",
-        ws_base: "wss://supergroup-api.mixin.fan",
+        ws_base: "wss://supergroup-ws.mixin.fan",
       },
     ];
   }
