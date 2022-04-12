@@ -98,6 +98,13 @@ class ProductItem extends Vue {
         icon: require("~/assets/images/meta-blog.svg"),
         url: "https://docs.pando.im/blog",
       },
+      {
+        label: this.$t("footer.press_kit"),
+        title: this.$t("footer.press_kit.title"),
+        icon: require("~/assets/images/meta-blog.svg"),
+        url:
+          "https://www.figma.com/file/l5ziu1tjI0QfpmoyL4Te0p/Press-Kit?node-id=0%3A1",
+      },
     ];
   }
 }

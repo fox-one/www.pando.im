@@ -114,5 +114,7 @@
   "footer.documents": "Documentos",
   "footer.documents.title": "Documentos de Pando para usuarios y desarrolladores",
   "footer.blog": "Blog",
-  "footer.blog.title": "Blog oficial de Pando"
+  "footer.blog.title": "Blog oficial de Pando",
+  "footer.press_kit": "Press Kit",
+  "footer.press_kit.title": "Pando's press kit at Figma"
 }

@@ -114,5 +114,7 @@
   "footer.documents": "ドキュメント",
   "footer.documents.title": "ユーザーと開発者向けのPandドキュメント",
   "footer.blog": "ブログ",
-  "footer.blog.title": "パンド公式ブログ"
+  "footer.blog.title": "パンド公式ブログ",
+  "footer.press_kit": "Press Kit",
+  "footer.press_kit.title": "Pando's press kit at Figma"
 }

@@ -114,5 +114,7 @@
   "footer.documents": "文檔",
   "footer.documents.title": "為用戶和開發人員提供的 Pando 文檔",
   "footer.blog": "部落格",
-  "footer.blog.title": "Pando的官方部落格"
+  "footer.blog.title": "Pando的官方部落格",
+  "footer.press_kit": "Press Kit",
+  "footer.press_kit.title": "Pando's press kit at Figma"
 }
