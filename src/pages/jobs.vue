@@ -21,6 +21,14 @@
                   decentralized exchange, lending, stablecoin minting, instant
                   chatting, asset management and browser wallet.
                 </p>
+                <p>
+                  To be able to achieve our mission, we need to onboard more
+                  talented people to jointly make it happen. Our entire team
+                  work fully remotely, distributed all over the world. As part
+                  of us, you will be able to work wherever you want while being
+                  part of the exciting journey to enable the future of crypto
+                  autonomy.
+                </p>
               </div>
               <div class="job mb-10">
                 <h3 class="job-title mb-4 greyscale_1--text">
