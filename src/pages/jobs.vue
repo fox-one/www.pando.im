@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <section class="section" ref="section">
-      <div class="section-inner">
+      <div class="section-inner pa-4">
         <div class="center">
           <div class="content">
             <h1 class="section-title text-center mb-10">
