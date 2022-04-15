@@ -8,7 +8,20 @@
               {{ "Work at Pando" }}
             </h1>
 
-            <div class="text body-1 greyscale_2--text mb-5">
+            <div class="text body-1 mb-5">
+              <div class="intro mb-10">
+                <p>
+                  We are Pando, a decentralized financial network with the
+                  mission to provide the next generation of comprehensive
+                  decentralized financial services.
+                </p>
+                <p>
+                  Our current product suite include 4swap, Lake, Rings, Leaf,
+                  Lots, Wave, and Fennec, providing services including
+                  decentralized exchange, lending, stablecoin minting, instant
+                  chatting, asset management and browser wallet.
+                </p>
+              </div>
               <div class="job mb-10">
                 <h3 class="job-title mb-4 greyscale_1--text">
                   Front-end Developer
