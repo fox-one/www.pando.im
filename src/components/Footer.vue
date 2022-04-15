@@ -20,23 +20,25 @@
 
       <v-row class="meta-row mb-3">
         <v-col cols="12" md="3" class="pa-4">
-          <div class="body-2 copyright">Copyright © 2021 Pando</div>
+          <div class="body-2 copyright">Copyright © {{ year }} Pando</div>
         </v-col>
 
         <v-col cols="12" md="9" class="pa-4">
           <div class="links d-flex text-right">
-            <a
+            <span
               v-for="link in links"
               :key="link.label"
-              :title="link.title"
-              :href="link.url"
-              class="link d-flex"
-              target="_blank"
+              class="link d-flex body-2 font-weight-bold"
             >
-              <span class="body-2 font-weight-bold">
-                {{ link.label }}
-              </span>
-            </a>
+              <nuxt-link v-if="link.internal" :to="link.url">{{
+                link.label
+              }}</nuxt-link>
+              <a v-else :title="link.title" :href="link.url" target="_blank">
+                <span class="body-2 font-weight-bold">
+                  {{ link.label }}
+                </span>
+              </a>
+            </span>
           </div>
         </v-col>
       </v-row>
@@ -105,7 +107,18 @@ class ProductItem extends Vue {
         url:
           "https://www.figma.com/file/l5ziu1tjI0QfpmoyL4Te0p/Press-Kit?node-id=0%3A1",
       },
+      {
+        label: this.$t("footer.jobs"),
+        title: this.$t("footer.jobs.title"),
+        icon: require("~/assets/images/meta-blog.svg"),
+        internal: true,
+        url: "/jobs",
+      },
     ];
+  }
+
+  get year() {
+    return new Date().getFullYear();
   }
 }
 export default ProductItem;

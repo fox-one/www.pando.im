@@ -13,8 +13,8 @@
   "showcases": "项目展示",
   "other_versions": "其他版本",
   "title.home": "Pando官方網站",
-  "product.lots.title": "Communities",
-  "product.lots.subtitle": "This community is a great place to ask questions, and chat with others",
+  "product.lots.title": "社區",
+  "product.lots.subtitle": "這個社區是一個提出問題和與他人聊天的好地方。",
   "product.lake.title": "Pando Lake",
   "product.lake.title_4swap": "4swap",
   "product.lake.title_both": "Pando Lake & 4swap",
@@ -115,6 +115,8 @@
   "footer.documents.title": "為用戶和開發人員提供的 Pando 文檔",
   "footer.blog": "部落格",
   "footer.blog.title": "Pando的官方部落格",
-  "footer.press_kit": "Press Kit",
-  "footer.press_kit.title": "Pando's press kit at Figma"
+  "footer.jobs": "Jobs",
+  "footer.jobs.title": "Work at Pando",
+  "footer.press_kit": "新聞資料",
+  "footer.press_kit.title": "Pando的新聞資料在Figma"
 }
