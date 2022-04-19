@@ -1,6 +1,6 @@
 export const isProduct = process.env.APP_ENV === "prod";
 
-export const GA = "UA-112996081-17";
+export const GA = "G-ZMQ4PKF7BP";
 
 export const API_BASE = "";
 
