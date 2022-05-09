@@ -41,6 +41,7 @@
           :theme-color="lot.theme"
           :api-base="lot.api_base"
           :ws-base="lot.ws_base"
+          @error="handleError"
         />
       </v-layout>
     </v-layout>
@@ -186,6 +187,10 @@ class IndexPage extends Mixins(mixins.page) {
     if (prod.url) {
       window.open(prod.url);
     }
+  }
+
+  handleError(error) {
+    console.log(error);
   }
 }
 export default IndexPage;
