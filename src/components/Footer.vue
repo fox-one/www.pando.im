@@ -62,25 +62,25 @@ class ProductItem extends Vue {
       {
         label: "Twitter",
         alt: "Pando's official Twitter account",
-        icon: "$vuetify.icons.iconMetaTwitter",
+        icon: "$FIconTwitterFill",
         url: "https://twitter.com/pando_im",
       },
       {
         label: "Discord",
         alt: "Pando's official discord server",
-        icon: "$vuetify.icons.iconMetaDiscord",
+        icon: "$FIconDiscordFill",
         url: "https://discord.gg/ek45g3Cymd",
       },
       {
         label: "Telegram",
         alt: "Pando's official telegram server",
-        icon: "$vuetify.icons.iconMetaTelegram",
+        icon: "$FIconTelegramFill",
         url: "https://t.me/pandoim",
       },
       {
         label: "Reddit",
         alt: "Pando's official reddit server",
-        icon: "$vuetify.icons.iconMetaReddit",
+        icon: "$FIconRedditFill",
         url: "https://www.reddit.com/r/pando/",
       },
     ];

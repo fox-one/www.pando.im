@@ -1,26 +1,6 @@
 import UIKit from "@foxone/uikit";
 import { mergeDeep } from "vuetify/lib/util/helpers";
-
-const icons = {
-  iconfont: "mdiSvg",
-  values: {
-    iconMetaTwitter: {
-      component: "icon-meta-twitter",
-    },
-    iconMetaTelegram: {
-      component: "icon-meta-telegram",
-    },
-    iconMetaDiscord: {
-      component: "icon-meta-discord",
-    },
-    iconMetaReddit: {
-      component: "icon-meta-reddit",
-    },
-    iconMenu: {
-      component: "icon-menu",
-    },
-  },
-};
+import icons from "@/utils/icons";
 
 export default function () {
   const options = {
