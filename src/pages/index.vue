@@ -2,7 +2,7 @@
   <div class="page">
     <div class="head">
       <div class="head-image"></div>
-      <div class="head-content">
+      <div class="head-content px-sm-4">
         <h1 class="home-headline">{{ $t("headline") }}</h1>
         <h2 class="">
           <div
