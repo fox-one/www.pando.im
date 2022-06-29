@@ -29,7 +29,12 @@
                   part of the exciting journey to enable the future of crypto
                   autonomy.
                 </p>
+                <p>
+                  If you are interested, please send your resume to
+                  jobs@pando.im
+                </p>
               </div>
+
               <div class="job mb-10">
                 <h3 class="job-title mb-4 greyscale_1--text">
                   Front-end Developer
@@ -94,9 +99,61 @@
                   <li>
                     Contributed to well-known open-source front-end project(s)
                   </li>
+                </ul>
+              </div>
+
+              <div class="job mb-10">
+                <h3 class="job-title mb-4 greyscale_1--text">App Developer</h3>
+
+                <p>Base: Anywhere you want to be.</p>
+
+                <p><em>What You’ll Do</em></p>
+
+                <ul class="mb-4">
                   <li>
-                    If you are interested, please send your resume to
-                    jobs@pando.im
+                    Participate in the development and maintenance of our mobile
+                    app projects
+                  </li>
+                  <li>Participate in the open source work of our projects</li>
+                  <li>
+                    Collaborate remotely with a globally-based technical team
+                  </li>
+                  <li>
+                    Collaborate with a squad of product manager, designer, QA
+                    specialist and back-end developer on iterating on the
+                    products to meet requirements
+                  </li>
+                  <li>
+                    Research industry trends and new technologies to ensure our
+                    standards and practices are current and poised to deliver
+                    the best products possible
+                  </li>
+                </ul>
+
+                <p><em>Required Qualifications</em></p>
+
+                <ul class="mb-4">
+                  <li>
+                    Proficient understanding of the team development process.
+                    Proficient in using Git for code management
+                  </li>
+                  <li>
+                    Proficient knowledge of mobile tech stacks including but not
+                    limited to iOS and Android
+                  </li>
+                  <li>Extensive cross-platform experience, such as Flutter</li>
+                  <li>Experience in optimizing app performance</li>
+                </ul>
+
+                <p><em>Preferred Qualifications</em></p>
+
+                <ul class="mb-4">
+                  <li>Ability to conduct basic communications in English</li>
+                  <li>Web development experience</li>
+                  <li>Experience in collaborating remotely</li>
+                  <li>Maintain long-term open-source project(s) of your own</li>
+                  <li>
+                    Contributed to well-known open-source front-end project(s)
                   </li>
                 </ul>
               </div>
