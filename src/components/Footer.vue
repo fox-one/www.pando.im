@@ -89,28 +89,29 @@ class ProductItem extends Vue {
   get links() {
     return [
       {
+        label: this.$t("footer.catkin"),
+        title: this.$t("footer.catkin"),
+        url: "https://catkin.pando.im",
+      },
+      {
         label: this.$t("footer.documents"),
         title: this.$t("footer.documents.title"),
-        icon: require("~/assets/images/meta-docs.svg"),
         url: "https://docs.pando.im",
       },
       {
         label: this.$t("footer.blog"),
         title: this.$t("footer.blog.title"),
-        icon: require("~/assets/images/meta-blog.svg"),
         url: "https://docs.pando.im/blog",
       },
       {
         label: this.$t("footer.press_kit"),
         title: this.$t("footer.press_kit.title"),
-        icon: require("~/assets/images/meta-blog.svg"),
         url:
           "https://www.figma.com/file/l5ziu1tjI0QfpmoyL4Te0p/Press-Kit?node-id=0%3A1",
       },
       {
         label: this.$t("footer.jobs"),
         title: this.$t("footer.jobs.title"),
-        icon: require("~/assets/images/meta-blog.svg"),
         internal: true,
         url: "/jobs",
       },
