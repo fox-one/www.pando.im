@@ -89,6 +89,9 @@
   "product.fennec.slide_item_label_1": "收集資產",
   "product.fennec.slide_item_label_2": "發送和接收資產",
   "product.fennec.slide_item_label_3": "交換代幣",
+  "product.catkin.title": "Pando Catkin",
+  "product.catkin.title_short": "Catkin",
+  "product.catkin.subtitle": "獲得加密貨幣之最佳去處",
   "product.root.title": "Pando Root",
   "product.root.subtitle": "神秘項目，即將推出。",
   "dev.title": "基於 Pando 開發 dApp 很容易",
@@ -115,8 +118,8 @@
   "footer.documents.title": "為用戶和開發人員提供的 Pando 文檔",
   "footer.blog": "部落格",
   "footer.blog.title": "Pando的官方部落格",
-  "footer.jobs": "Jobs",
-  "footer.jobs.title": "Work at Pando",
-  "footer.press_kit": "新聞資料",
-  "footer.press_kit.title": "Pando的新聞資料在Figma"
+  "footer.jobs": "工作",
+  "footer.jobs.title": "在Pando工作",
+  "footer.press_kit": "Press Kit",
+  "footer.press_kit.title": "Pando的 Press Kit 在Figma"
 }
