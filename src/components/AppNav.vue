@@ -21,7 +21,7 @@
               @click="dialog = false"
               aria-label="menu"
             >
-              <v-icon>{{ $icons.mdiClose }}</v-icon>
+              <v-icon>$FIconClose</v-icon>
             </v-btn>
           </div>
           <v-list>
@@ -47,7 +47,7 @@
             <v-list-item
               v-for="(item, ix) in navItems"
               :key="`nav-item-${ix}`"
-              @click="goto(item.route)"
+              @click="goto(item)"
             >
               <v-list-item-icon>
                 <v-avatar size="32"><v-img :src="item.icon" /></v-avatar>
@@ -69,6 +69,7 @@
         </v-card>
       </v-dialog>
     </div>
+
     <div class="app-nav-inner d-flex is-desktop">
       <nuxt-link to="/">
         <v-avatar size="24">
@@ -78,22 +79,32 @@
 
       <v-spacer></v-spacer>
 
-      <nuxt-link
-        v-for="(item, ix) in navItems"
-        :key="`nav-item-${ix}`"
-        :to="item.route"
-      >
-        <span
-          class="nav-item-text body-2 font-weight-bold greyscale_3--text"
-          :class="
-            currentRouteName === item.name
-              ? 'greyscale_1--text'
-              : 'greyscale_4--text'
-          "
-        >
-          {{ item.label }}
-        </span>
-      </nuxt-link>
+      <div v-for="(item, ix) in navItems" :key="`nav-item-${ix}`">
+        <nuxt-link v-if="item.route" :to="item.route">
+          <span
+            class="nav-item-text body-2 font-weight-bold greyscale_3--text"
+            :class="
+              currentRouteName === item.name
+                ? 'greyscale_1--text'
+                : 'greyscale_4--text'
+            "
+          >
+            {{ item.label }}
+          </span>
+        </nuxt-link>
+        <a v-else :href="item.url" target="_blank">
+          <span
+            class="nav-item-text body-2 font-weight-bold greyscale_3--text"
+            :class="
+              currentRouteName === item.name
+                ? 'greyscale_1--text'
+                : 'greyscale_4--text'
+            "
+          >
+            {{ item.label }}
+          </span>
+        </a>
+      </div>
     </div>
   </f-app-bar>
 </template>
@@ -130,6 +141,12 @@ class AppNav extends Vue {
         route: "/rings",
       },
       {
+        name: "catkin",
+        icon: require("~/assets/images/products/catkin.png"),
+        label: this.$t("product.catkin.title_short"),
+        url: "https://catkin.pando.im",
+      },
+      {
         name: "fennec",
         icon: require("~/assets/images/wallets/fennec.png"),
         label: this.$t("product.fennec.title"),
@@ -145,9 +162,13 @@ class AppNav extends Vue {
     return this.$route.name;
   }
 
-  goto(route) {
+  goto(item) {
     this.dialog = false;
-    this.$router.push(route);
+    if (item.router) {
+      this.$router.push(item.route);
+    } else {
+      window.location.href = item.url;
+    }
   }
 }
 export default AppNav;

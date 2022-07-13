@@ -21,7 +21,7 @@
       />
     </div>
 
-    <v-layout
+    <!-- <v-layout
       class="products-lots"
       :class="isMobile && 'px-4'"
       column
@@ -44,7 +44,7 @@
           @error="handleError"
         />
       </v-layout>
-    </v-layout>
+    </v-layout> -->
 
     <dev-section />
 

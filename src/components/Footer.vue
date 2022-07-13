@@ -89,11 +89,6 @@ class ProductItem extends Vue {
   get links() {
     return [
       {
-        label: this.$t("footer.catkin"),
-        title: this.$t("footer.catkin"),
-        url: "https://catkin.pando.im",
-      },
-      {
         label: this.$t("footer.documents"),
         title: this.$t("footer.documents.title"),
         url: "https://docs.pando.im",

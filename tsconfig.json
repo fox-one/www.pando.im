@@ -18,11 +18,11 @@
       "@/*": ["src/*"]
     },
     "types": [
-      "nuxt-i18n",
       "@types/node",
       "@nuxt/types",
       "webpack-env",
-      "@nuxtjs/vuetify"
+      "@nuxtjs/vuetify",
+      "@nuxtjs/i18n"
     ]
   },
   "exclude": ["node_modules"]

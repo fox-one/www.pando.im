@@ -72,12 +72,13 @@ class LakePage extends Mixins(mixins.page) {
   get buttons() {
     return [
       {
-        icon: this.$icons.mdiPlus,
+        icon: "$FIconAdd",
         label: this.$t("3rd_party_apps.launch_label"),
         url:
           "https://github.com/fox-one/www.pando.im/tree/master/src/static/3rd-party-apps-info/",
       },
       {
+        icon: "$FIconDocumentFill",
         label: this.$t("3rd_party_apps.docs"),
         url: "https://docs.pando.im/developer/intro",
       },

@@ -89,6 +89,9 @@
   "product.fennec.slide_item_label_1": "Collect Assets",
   "product.fennec.slide_item_label_2": "Send & Receive",
   "product.fennec.slide_item_label_3": "Swap Tokens",
+  "product.catkin.title": "Pando Catkin",
+  "product.catkin.title_short": "Catkin",
+  "product.catkin.subtitle": "The best place to get FREE coins and tokens",
   "product.root.title": "Pando Root",
   "product.root.subtitle": "The mystery project, coming soon.",
   "dev.title": "It is easy to develop dApps based on Pando",
@@ -118,7 +121,5 @@
   "footer.jobs": "Jobs",
   "footer.jobs.title": "Work at Pando",
   "footer.press_kit": "Press Kit",
-  "footer.press_kit.title": "Pando's press kit at Figma",
-  "footer.catkin": "Catkin",
-  "footer.catkin.title": "Claim FREE coins and tokens"
+  "footer.press_kit.title": "Pando's press kit at Figma"
 }

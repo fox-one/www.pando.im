@@ -86,7 +86,7 @@ class LakePage extends Mixins(mixins.page) {
       },
       {
         label: this.$t("documents"),
-        icon: require("~/assets/images/button-icons/docs.svg"),
+        icon: "$FIconDocumentFill",
         url: "https://docs.pando.im/docs/lake/intro",
       },
     ];

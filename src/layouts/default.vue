@@ -15,7 +15,6 @@ import Footer from "@/components/Footer.vue";
 import AppNav from "@/components/AppNav.vue";
 
 @Component({
-  middleware: "i18n",
   components: {
     "global-footer": Footer,
     AppNav,

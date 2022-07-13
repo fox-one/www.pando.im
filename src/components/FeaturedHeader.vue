@@ -25,12 +25,9 @@
                 :disabled="primaryButton.disabled"
                 x-large
               >
-                <v-img
-                  v-if="primaryButton.icon"
-                  :src="primaryButton.icon"
-                  max-width="16"
-                  class="mr-2"
-                />
+                <v-icon v-if="primaryButton.icon" size="20" class="mr-2">{{
+                  primaryButton.icon
+                }}</v-icon>
                 <span>{{ primaryButton.label }}</span>
               </f-button>
             </a>
@@ -42,12 +39,9 @@
                 x-large
                 class="button"
               >
-                <v-img
-                  v-if="secondaryButton.icon"
-                  :src="secondaryButton.icon"
-                  max-width="16"
-                  class="mr-2"
-                />
+                <v-icon v-if="secondaryButton.icon" size="20" class="mr-2">{{
+                  secondaryButton.icon
+                }}</v-icon>
                 <span>{{ secondaryButton.label }}</span>
               </f-button>
             </a>
@@ -87,18 +81,19 @@
 
             <div class="buttons">
               <a :href="primaryButton.url" class="button-wrapper">
-                <f-button class="button primary" color="primary" x-large>{{
-                  primaryButton.label
-                }}</f-button>
+                <f-button class="button primary" color="primary" x-large>
+                  <v-icon v-if="primaryButton.icon" size="20" class="mr-2">{{
+                    primaryButton.icon
+                  }}</v-icon>
+                  <span>{{ primaryButton.label }} </span>
+                </f-button>
               </a>
               <a :href="secondaryButton.url" class="button-wrapper">
                 <f-button class="button secondary" color="secondray" x-large>
-                  <v-img
-                    v-if="secondaryButton.icon"
-                    :src="secondaryButton.icon"
-                    max-width="16"
-                    class="mr-2"
-                  />
+                  <v-icon v-if="secondaryButton.icon" size="20" class="mr-2">{{
+                    secondaryButton.icon
+                  }}</v-icon>
+
                   <span>{{ secondaryButton.label }}</span>
                 </f-button>
               </a>
@@ -133,7 +128,7 @@ class FeaturedHeader extends Vue {
   @Prop({ default: null }) primaryButton!: any;
   @Prop({ default: null }) secondaryButton!: any;
   @Prop({ default: "left" }) layout!: string;
-  @Prop({ default: [] }) stat!: Array<any>;
+  @Prop({ default: null }) stat!: any;
 
   mounted() {
     // Vue.nextTick(() => {

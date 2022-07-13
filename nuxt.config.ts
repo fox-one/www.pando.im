@@ -4,11 +4,10 @@ import { isProduct, GA } from "./src/constants";
 
 const config: NuxtConfig = {
   ssr: false,
-  target: "static",
-  // mode: 'ssr',
   router: {
     mode: "history",
   },
+  target: "static",
   srcDir: "./src",
   head: {
     titleTemplate: "%s",
@@ -32,7 +31,13 @@ const config: NuxtConfig = {
         content: "light only",
       },
     ],
-    link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+    link: [
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+      },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+    ],
   },
   loading: { color: "#fff" },
   css: ["~/styles/index.scss"],
@@ -55,21 +60,40 @@ const config: NuxtConfig = {
     "@nuxtjs/vuetify",
   ],
   modules: [
+    "@nuxtjs/pwa",
     "@nuxtjs/axios",
+    "@nuxtjs/i18n",
     "@nuxtjs/dotenv",
-    [
-      "nuxt-i18n",
-      {
-        vueI18n: i18n,
-        locales: ["en", "zh"],
-        defaultLocale: "en",
-        strategy: "no_prefix",
-        detectBrowserLanguage: false,
-        parsePages: false,
-        seo: false,
-      },
-    ],
+    "@nuxtjs/sitemap",
   ],
+  i18n: {
+    baseUrl: "https://pando.im",
+    locales: [
+      { code: "en", iso: "en-US" },
+      { code: "es", iso: "es-ES" },
+      { code: "fr", iso: "fr-FR" },
+      { code: "ja", iso: "ja-JP" },
+      { code: "de", iso: "de-DE" },
+      { code: "ko", iso: "ko-KR" },
+      { code: "zh", iso: "zh-TW" },
+    ],
+    defaultLocale: "en",
+    vueI18n: i18n,
+  },
+  sitemap: {
+    hostname: "https://pando.im",
+    i18n: {
+      locales: ["en", "es", "fr", "ja", "de", "ko", "zh"],
+    },
+  },
+  pwa: {
+    manifest: {
+      name: "Pando",
+      short_name: "Pando",
+      lang: "en",
+      theme_color: "#FFF",
+    },
+  },
   vuetify: {
     customVariables: ["~/styles/variables.scss"],
     defaultAssets: false,

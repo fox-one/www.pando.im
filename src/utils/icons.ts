@@ -1,10 +1,15 @@
-import { mdiArrowRight, mdiOpenInNew, mdiPlus, mdiClose } from "@mdi/js";
+import { mdiArrowRight, mdiPlus } from "@mdi/js";
 import {
   FIconDiscordFill,
   FIconTwitterFill,
   FIconTelegramFill,
   FIconRedditFill,
   FIconMenuBold,
+  FIconClose,
+  FIconAdd,
+  FIconDocumentFill,
+  FIconUpRightBold,
+  FIconPlayFill,
 } from "@foxone/icons";
 
 const ficons = {
@@ -13,12 +18,15 @@ const ficons = {
   FIconTelegramFill: { component: FIconTelegramFill },
   FIconRedditFill: { component: FIconRedditFill },
   FIconMenuBold: { component: FIconMenuBold },
+  FIconClose: { component: FIconClose },
+  FIconAdd: { component: FIconAdd },
+  FIconDocumentFill: { component: FIconDocumentFill },
+  FIconUpRightBold: { component: FIconUpRightBold },
+  FIconPlayFill: { component: FIconPlayFill },
 };
 
 export default {
   mdiArrowRight,
-  mdiOpenInNew,
   mdiPlus,
-  mdiClose,
   ...ficons,
 };

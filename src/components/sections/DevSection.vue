@@ -9,21 +9,13 @@
       <div class="buttons mt-4 d-flex">
         <nuxt-link to="/3rd-party-apps" class="button-wrapper">
           <f-button color="primary" x-large class="button">
-            <v-img
-              max-width="16"
-              height="16"
-              :src="require('~/assets/images/button-icons/play.svg')"
-            />
+            <v-icon size="20">$FIconPlayFill</v-icon>
             <span class="ml-1">{{ $t("showcases") }} </span>
           </f-button>
         </nuxt-link>
         <a href="https://docs.pando.im/developer/intro" class="button-wrapper">
           <f-button color="secondary" x-large class="button">
-            <v-img
-              max-width="16"
-              height="16"
-              :src="require('~/assets/images/button-icons/docs.svg')"
-            />
+            <v-icon size="20">$FIconDocumentFill</v-icon>
             <span class="ml-1">{{ $t("learn_more") }}</span>
           </f-button>
         </a>
