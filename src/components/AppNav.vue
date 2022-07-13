@@ -71,7 +71,7 @@
     </div>
 
     <div class="app-nav-inner d-flex is-desktop">
-      <nuxt-link to="/">
+      <nuxt-link :to="localePath('/')">
         <v-avatar size="24">
           <v-img src="/favicon.png" />
         </v-avatar>
@@ -80,7 +80,7 @@
       <v-spacer></v-spacer>
 
       <div v-for="(item, ix) in navItems" :key="`nav-item-${ix}`">
-        <nuxt-link v-if="item.route" :to="item.route">
+        <nuxt-link v-if="item.route" :to="localePath(item.route)">
           <span
             class="nav-item-text body-2 font-weight-bold greyscale_3--text"
             :class="

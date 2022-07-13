@@ -16,7 +16,7 @@
               class="wallet d-flex"
             >
               <img :src="wallet.icon" :alt="wallet.label" class="icon mb-4" />
-              <nuxt-link v-if="wallet.route" :to="wallet.route">
+              <nuxt-link v-if="wallet.route" :to="localePath(wallet.route)">
                 <f-button color="primary" x-large>{{ wallet.label }}</f-button>
               </nuxt-link>
               <a v-else :href="wallet.url" :title="wallet.label">

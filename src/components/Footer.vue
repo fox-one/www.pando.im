@@ -30,7 +30,7 @@
               :key="link.label"
               class="link d-flex body-2 font-weight-bold"
             >
-              <nuxt-link v-if="link.internal" :to="link.url">{{
+              <nuxt-link v-if="link.internal" :to="localePath(link.url)">{{
                 link.label
               }}</nuxt-link>
               <a v-else :title="link.title" :href="link.url" target="_blank">

@@ -7,7 +7,7 @@
         {{ $t("dev.text") }}
       </div>
       <div class="buttons mt-4 d-flex">
-        <nuxt-link to="/3rd-party-apps" class="button-wrapper">
+        <nuxt-link :to="localePath('/3rd-party-apps')" class="button-wrapper">
           <f-button color="primary" x-large class="button">
             <v-icon size="20">$FIconPlayFill</v-icon>
             <span class="ml-1">{{ $t("showcases") }} </span>

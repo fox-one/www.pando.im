@@ -33,7 +33,7 @@
         <div class="product-subtitle mb-3">{{ product.subtitle }}</div>
 
         <div v-if="product.route" class="product-buttons">
-          <nuxt-link :to="product.route">
+          <nuxt-link :to="localePath(product.route)">
             <a
               v-if="product.help_label"
               :href="product.help_url"
