@@ -74,6 +74,14 @@ class LeafPage extends Mixins(mixins.page) {
     return this.$t("product.leaf.title") as string;
   }
 
+  get shortDesc() {
+    return this.$t("product.leaf.hlight") as string;
+  }
+
+  get desc() {
+    return this.$t("product.leaf.subtitle") as string;
+  }
+
   get buttons() {
     return [
       {

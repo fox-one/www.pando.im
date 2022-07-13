@@ -71,6 +71,14 @@ class IndexPage extends Mixins(mixins.page) {
     return this.$t("title.home") as string;
   }
 
+  get shortDesc() {
+    return this.$t("short_desc") as string;
+  }
+
+  get desc() {
+    return this.$t("description") as string;
+  }
+
   get isMobile() {
     return this.$utils.helper.isMobile();
   }

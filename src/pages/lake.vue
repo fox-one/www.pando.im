@@ -71,6 +71,14 @@ class LakePage extends Mixins(mixins.page) {
     return this.$t("product.lake.title") as string;
   }
 
+  get shortDesc() {
+    return this.$t("product.lake.subtitle") as string;
+  }
+
+  get desc() {
+    return this.$t("product.lake.subtitle") as string;
+  }
+
   get hlightTexts() {
     return [
       this.$t("product.lake.hlight_text1"),

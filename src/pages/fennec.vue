@@ -43,6 +43,14 @@ class FennecPage extends Mixins(mixins.page) {
     return this.$t("product.fennec.title") as string;
   }
 
+  get shortDesc() {
+    return this.$t("product.fennec.hlight") as string;
+  }
+
+  get desc() {
+    return this.$t("product.fennec.text") as string;
+  }
+
   get pageBgColor() {
     return "#24242F";
   }
